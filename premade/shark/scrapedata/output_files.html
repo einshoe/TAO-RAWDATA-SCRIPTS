@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Output files &mdash; shark  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="https://assets.readthedocs.org/static/javascript/readthedocs-doc-embed.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Optimization" href="optim.html" />
+    <link rel="prev" title="HPC systems" href="hpc.html" /> 
+
+<!-- RTD Extra Head -->
+
+<!-- 
+Always link to the latest version, as canonical.
+http://docs.readthedocs.org/en/latest/canonical.html
+-->
+<link rel="canonical" href="https://shark-sam.readthedocs.io/en/latest/output_files.html" />
+
+<link rel="stylesheet" href="https://assets.readthedocs.org/static/css/readthedocs-doc-embed.css" type="text/css" />
+
+<script type="text/javascript" src="_static/readthedocs-data.js"></script>
+
+<!-- Add page-specific data, which must exist in the page js, not global -->
+<script type="text/javascript">
+READTHEDOCS_DATA['page'] = 'output_files'
+READTHEDOCS_DATA['source_suffix'] = '.rst'
+</script>
+
+<script type="text/javascript" src="https://assets.readthedocs.org/static/javascript/readthedocs-analytics.js"></script>
+
+<!-- end RTD <extrahead> -->
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> shark
+          
+
+          
+          </a>
+
+          
+            
+            
+            
+              <div class="version">
+                latest
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="building.html">Building</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration/index.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="running.html">Running</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hpc.html">HPC systems</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Output files</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#galaxies">Galaxies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#cosmology"><code class="docutils literal notranslate"><span class="pre">cosmology</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1"><code class="docutils literal notranslate"><span class="pre">galaxies</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#global"><code class="docutils literal notranslate"><span class="pre">global</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#halo"><code class="docutils literal notranslate"><span class="pre">halo</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#run-info"><code class="docutils literal notranslate"><span class="pre">run_info</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#subhalo"><code class="docutils literal notranslate"><span class="pre">subhalo</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#star-formation-histories">Star formation histories</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#bulges-diskins"><code class="docutils literal notranslate"><span class="pre">bulges_diskins</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bulges-mergers"><code class="docutils literal notranslate"><span class="pre">bulges_mergers</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2"><code class="docutils literal notranslate"><span class="pre">cosmology</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#disks"><code class="docutils literal notranslate"><span class="pre">disks</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3"><code class="docutils literal notranslate"><span class="pre">galaxies</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4"><code class="docutils literal notranslate"><span class="pre">run_info</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="optim.html">Optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">shark</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Output files</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/ICRAR/shark/blob/master/doc/output_files.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="output-files">
+<h1>Output files<a class="headerlink" href="#output-files" title="Permalink to this headline">¶</a></h1>
+<p>For each snapshot of an execution,
+<em>shark</em> optionally outputs three different types of files:</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">galaxies.hdf5</span></code> contains the information of galaxies</li>
+<li><code class="docutils literal notranslate"><span class="pre">star_formation_histories.hdf5</span></code> contains the star formation history of the galaxies</li>
+</ul>
+</div></blockquote>
+<p>We list here each of the HDF5 groups and datasets
+found on each of these files.
+This list is automatically calculated from the files themselves.</p>
+<div class="section" id="galaxies">
+<h2>Galaxies<a class="headerlink" href="#galaxies" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="cosmology">
+<h3><code class="docutils literal notranslate"><span class="pre">cosmology</span></code><a class="headerlink" href="#cosmology" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">h</span></code>: normalization of hubble parameter H0 = h * 100 (km/s)/Mpc</li>
+<li><code class="docutils literal notranslate"><span class="pre">n_s</span></code>: scalar spectral index assumed in simulation</li>
+<li><code class="docutils literal notranslate"><span class="pre">omega_b</span></code>: omega baryon assumed in simulation</li>
+<li><code class="docutils literal notranslate"><span class="pre">omega_l</span></code>: omega lambda assumed in simulation</li>
+<li><code class="docutils literal notranslate"><span class="pre">omega_m</span></code>: omega matter assumed in simulation</li>
+<li><code class="docutils literal notranslate"><span class="pre">sigma8</span></code>: fluctuation amplitude at 8 Mpc/h</li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h3><code class="docutils literal notranslate"><span class="pre">galaxies</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">bh_accretion_rate_hh</span></code>: accretion rate onto the black hole during the hot halo mode [Msun/Gyr/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">bh_accretion_rate_sb</span></code>: accretion rate onto the black hole during the starburst mode [Msun/Gyr/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">cnfw_subhalo</span></code>: NFW concentration parameter of the dark matter subhalo in which this galaxy resides [dimensionless]. In the case of type 2 satellites, this corresponds to the concentration its subhalo had before disappearing from the subhalo catalogs.</li>
+<li><code class="docutils literal notranslate"><span class="pre">cooling_rate</span></code>: cooling rate of the hot halo component [Msun/Gyr/h].</li>
+<li><code class="docutils literal notranslate"><span class="pre">descendant_id_galaxy</span></code>: descendant galaxy ID. Different to galaxy id only if galaxy is type 2 and merges on the next snapshot.</li>
+<li><code class="docutils literal notranslate"><span class="pre">id_galaxy</span></code>: galaxy ID. Unique to this galaxy throughout time. If this galaxy never mergers onto a central, then its ID is always the same.</li>
+<li><code class="docutils literal notranslate"><span class="pre">id_halo</span></code>: halo ID. Unique to this snapshot.</li>
+<li><code class="docutils literal notranslate"><span class="pre">id_halo_tree</span></code>: halo id in the tree (unique to entire halo catalogue).</li>
+<li><code class="docutils literal notranslate"><span class="pre">id_subhalo</span></code>: subhalo ID. Unique to this snapshot.</li>
+<li><code class="docutils literal notranslate"><span class="pre">id_subhalo_tree</span></code>: subhalo id in the tree (unique to entire halo catalogue).</li>
+<li><code class="docutils literal notranslate"><span class="pre">l_x</span></code>: total angular momentum component x of galaxy [Msun pMpc km/s]. In the case of type 2 galaxies, the AM vector is randomly oriented.</li>
+<li><code class="docutils literal notranslate"><span class="pre">l_y</span></code>: total angular momentum component y of galaxy [Msun pMpc km/s]. In the case of type 2 galaxies, the AM vector is randomly oriented.</li>
+<li><code class="docutils literal notranslate"><span class="pre">l_z</span></code>: total angular momentum component z of galaxy [Msun pMpc km/s]. In the case of type 2 galaxies, the AM vector is randomly oriented.</li>
+<li><code class="docutils literal notranslate"><span class="pre">lambda_subhalo</span></code>: Spin parameter of the dark matter subhalo in which this galaxy resides [dimensionless].  In the case of type 2 satellites, this corresponds to the lambda its subhalo had before disappearing from the subhalo catalogs.</li>
+<li><code class="docutils literal notranslate"><span class="pre">m_bh</span></code>: black hole mass [Msun/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">matom_bulge</span></code>: atomic gas mass (helium plus hydrogen) in the bulge [Msun/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">matom_disk</span></code>: atomic gas mass (helium plus hydrogen) in the disk [Msun/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">mean_stellar_age</span></code>: stellar mass-weighted stellar age [Gyr]</li>
+<li><code class="docutils literal notranslate"><span class="pre">mgas_bulge</span></code>: gas mass in the bulge [Msun/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">mgas_disk</span></code>: total gas mass in the disk [Msun/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">mgas_metals_bulge</span></code>: mass of metals locked in the gas of the bulge [Msun/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">mgas_metals_disk</span></code>: mass of metals locked in the gas of the disk [Msun/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">mhot</span></code>: hot gas mass in the halo [Msun/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">mhot_metals</span></code>: mass of metals locked in the hot halo gas [Msun/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">mlost</span></code>: gas mass in the lost gas component - due to QSO feedback [Msun/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">mlost_metals</span></code>: mass of metals locked in the lost gas component - due to QSO feedback [Msun/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">mmol_bulge</span></code>: molecular gas mass (helium plus hydrogen) in the bulge [Msun/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">mmol_disk</span></code>: molecular gas mass (helium plus hydrogen) in the disk [Msun/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">mreheated</span></code>: gas mass in the ejected gas component [Msun/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">mreheated_metals</span></code>: mass of metals locked in the ejected gas component [Msun/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">mstars_bulge</span></code>: stellar mass in the bulge [Msun/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">mstars_bulge_diskins_assembly</span></code>: stellar mass in the bulge brought via disk instabilities from the disk [Msun/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">mstars_bulge_mergers_assembly</span></code>: stellar mass in the bulge brought via galaxy mergers (but that formed in disks) [Msun/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">mstars_burst_diskinstabilities</span></code>: stellar mass formed via starbursts driven by disk instabilities [Msun/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">mstars_burst_mergers</span></code>: stellar mass formed via starbursts driven by galaxy mergers [Msun/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">mstars_disk</span></code>: stellar mass in the disk [Msun/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">mstars_metals_bulge</span></code>: mass of metals locked in stars in the bulge [Msun/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">mstars_metals_bulge_diskins_assembly</span></code>: mass of metals locked in stars in the bulge that was brought via disk instabilities from the disk [Msun/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">mstars_metals_bulge_mergers_assembly</span></code>: mass of metals locked in stars in the bulge that was brought via galaxy mergers (but that formed in disks) [Msun/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">mstars_metals_burst_diskinstabilities</span></code>: mass of metals locked in stars that formed via starbursts driven by disk instabilities [Msun/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">mstars_metals_burst_mergers</span></code>: mass of metals locked in stars that formed via starbursts driven by galaxy mergers [Msun/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">mstars_metals_disk</span></code>: mass of metals locked in stars in the disk [Msun/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">mvir_hosthalo</span></code>: Dark matter mass of the host halo in which this galaxy resides [Msun/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">mvir_subhalo</span></code>: Dark matter mass of the subhalo in which this galaxy resides [Msun/h]. In the case of type 2 satellites, this corresponds to the mass its subhalo had before disappearing from the subhalo catalogs.</li>
+<li><code class="docutils literal notranslate"><span class="pre">position_x</span></code>: position component x of galaxy [cMpc/h]. In the case of type 2 galaxies, the positions are generated to randomly sample an NFW halo with the concentration of the halo the galaxy lives in.</li>
+<li><code class="docutils literal notranslate"><span class="pre">position_y</span></code>: position component y of galaxy [cMpc/h]. In the case of type 2 galaxies, the positions are generated to randomly sample an NFW halo with the concentration of the halo the galaxy lives in.</li>
+<li><code class="docutils literal notranslate"><span class="pre">position_z</span></code>: position component z of galaxy [cMpc/h]. In the case of type 2 galaxies, the positions are generated to randomly sample an NFW halo with the concentration of the halo the galaxy lives in.</li>
+<li><code class="docutils literal notranslate"><span class="pre">redshift_merger</span></code>: redshift at which this galaxy will merge onto a central galaxy (only relevant for type 2 galaxies)</li>
+<li><code class="docutils literal notranslate"><span class="pre">rgas_bulge</span></code>: half-mass radius of the gas bulge [cMpc/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">rgas_disk</span></code>: half-mass radius of the gas disk [cMpc/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">rstar_bulge</span></code>: half-mass radius of the stellar bulge [cMpc/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">rstar_disk</span></code>: half-mass radius of the stellar disk [cMpc/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">sfr_burst</span></code>: star formation rate in the bulge [Msun/Gyr/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">sfr_disk</span></code>: star formation rate in the disk [Msun/Gyr/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">specific_angular_momentum_bulge_gas</span></code>: specific angular momentum of the gas bulge [km/s * cMpc/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">specific_angular_momentum_bulge_star</span></code>: specific angular momentum of the stellar bulge [km/s * cMpc/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">specific_angular_momentum_disk_gas</span></code>: specific angular momentum of the gas disk [km/s * cMpc/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">specific_angular_momentum_disk_gas_atom</span></code>: specific angular momentum of the atomic gas disk [km/s * cMpc/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">specific_angular_momentum_disk_gas_mol</span></code>: specific angular momentum of the molecular gas disk [km/s * cMpc/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">specific_angular_momentum_disk_star</span></code>: specific angular momentum of the stellar disk [km/s * cMpc/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">type</span></code>: galaxy type; =0 for centrals; =1 for satellites that reside in well identified subhalos; =2 for orphan satellites</li>
+<li><code class="docutils literal notranslate"><span class="pre">velocity_x</span></code>: peculiar velocity component x of galaxy [km/s]. In the case of type 2 galaxies, the velocity is generated to randomly sample the velocity dispersion of a NFW halo with the concentration of the halo the galaxy lives in.</li>
+<li><code class="docutils literal notranslate"><span class="pre">velocity_y</span></code>: peculiar velocity component y of galaxy [km/s]. In the case of type 2 galaxies, the velocity is generated to randomly sample the velocity dispersion of a NFW halo with the concentration of the halo the galaxy lives in.</li>
+<li><code class="docutils literal notranslate"><span class="pre">velocity_z</span></code>: peculiar velocity component z of galaxy [km/s]. In the case of type 2 galaxies, the velocity is generated to randomly sample the velocity dispersion of a NFW halo with the concentration of the halo the galaxy lives in.</li>
+<li><code class="docutils literal notranslate"><span class="pre">vmax_subhalo</span></code>: Maximum circular velocity of this galaxy [km/s]</li>
+<li><code class="docutils literal notranslate"><span class="pre">vvir_hosthalo</span></code>: Virial velocity of the dark matter host halo in which this galaxy resides [km/s].</li>
+<li><code class="docutils literal notranslate"><span class="pre">vvir_subhalo</span></code>: Virial velocity of the dark matter subhalo in which this galaxy resides [km/s]. In the case of type 2 satellites, this corresponds to the virial velocity its subhalo had before disappearing from the subhalo catalogs.</li>
+</ul>
+</div>
+<div class="section" id="global">
+<h3><code class="docutils literal notranslate"><span class="pre">global</span></code><a class="headerlink" href="#global" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">m_bh</span></code>: total mass locked up in black holes in the simulated box [Msun/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">m_dm</span></code>: total dark matter mass locked up in halos in the simulated box [Msun/h].</li>
+<li><code class="docutils literal notranslate"><span class="pre">m_h2</span></code>: total molecular gas mass in the simulated box [Msun/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">m_hi</span></code>: total atomic gas mass in the simulated box [Msun/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">mbar_created</span></code>: total baryon mass in the simulated box [Msun/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">mbar_lost</span></code>: total baryons lost in the simulated box [Msun/h] (ideally this should be =0)</li>
+<li><code class="docutils literal notranslate"><span class="pre">mcold</span></code>: total cold gas mass (interstellar medium) in the simulated box [Msun/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">mcold_halo</span></code>: total halo cold gas in the simulated box [Msun/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">mcold_halo_metals</span></code>: total mass of metals in the halo cold gas mass in the simulated box [Msun/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">mcold_metals</span></code>: total mass of metals locked in cold gas in the simulated box [Msun/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">mejected_halo</span></code>: total gas mass ejected from halos due to stellar feedback (and that has not yet been reincorporated) in the simulated box [Msun/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">mejected_halo_metals</span></code>: total mass of metals in the ejected gas reservoir due to stellar feedback in the simulated box [Msun/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">mhot_halo</span></code>: total hot gas mass in halos in the simulated box [Msun/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">mhot_metals</span></code>: total mass of metals in the hot gas mass in halos in the simulated box [Msun/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">mlost_halo</span></code>: total gas mass ejected from halos due to QSO feedback in the simulated box [Msun/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">mlost_halo_metals</span></code>: total mass of metals in the ejected gas reservoir due to QSO feedback in the simulated box [Msun/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">mstars</span></code>: total stellar mass in the simulated box [Msun/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">mstars_bursts_diskinstabilities</span></code>: total stellar mass formed via starbursts triggered by disk instabilities in the simulated box [Msun/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">mstars_bursts_mergers</span></code>: total stellar mass formed via starbursts triggered by galaxy mergers in the simulated box [Msun/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">mstars_metals</span></code>: total mass of metals locked in stars in the simulated box [Msun/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">mstars_metals_bursts_diskinstabilities</span></code>: total mass of metals locked in stars that formed via starbursts triggered by disk instabilities in the simulated box [Msun/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">mstars_metals_bursts_mergers</span></code>: total mass of metals locked in stars that formed via starbursts triggered by galaxy mergers in the simulated box [Msun/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">number_disk_instabilities</span></code>: number of disk instability episodes taking place in the simulated box at this snapshot.</li>
+<li><code class="docutils literal notranslate"><span class="pre">number_major_mergers</span></code>: number of major mergers taking place in the simulated box at this snapshot.</li>
+<li><code class="docutils literal notranslate"><span class="pre">number_minor_mergers</span></code>: number of minor mergers taking place in the simulated box at this snapshot.</li>
+<li><code class="docutils literal notranslate"><span class="pre">redshifts</span></code>: redshifts of the global outputs.</li>
+<li><code class="docutils literal notranslate"><span class="pre">sfr_burst</span></code>: total star formation rate taking place in bulges in the simulated box [Msun/Gyr/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">sfr_quiescent</span></code>: total star formation rate taking place in disks in the simulated box [Msun/Gyr/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">smbh_maximum</span></code>: Maximum mass of the SMBHs in the simulated box [Msun/h]</li>
+</ul>
+</div>
+<div class="section" id="halo">
+<h3><code class="docutils literal notranslate"><span class="pre">halo</span></code><a class="headerlink" href="#halo" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">age_50</span></code>: redshift at which the halo had 50% of its current mass</li>
+<li><code class="docutils literal notranslate"><span class="pre">age_80</span></code>: redshift at which the halo had 80% of its current mass</li>
+<li><code class="docutils literal notranslate"><span class="pre">concentration</span></code>: halo concentration</li>
+<li><code class="docutils literal notranslate"><span class="pre">final_z0_mvir</span></code>: virial mass of the halo in which this halo will end up in by z=0 [Msun/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">lambda</span></code>: halo spin</li>
+<li><code class="docutils literal notranslate"><span class="pre">mvir</span></code>: virial mass of halo [Msun/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">vvir</span></code>: virial velocity of halo [km/s]</li>
+</ul>
+</div>
+<div class="section" id="run-info">
+<h3><code class="docutils literal notranslate"><span class="pre">run_info</span></code><a class="headerlink" href="#run-info" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">batches</span></code>: number of batches analysed</li>
+<li><code class="docutils literal notranslate"><span class="pre">effective_volume</span></code>: effective volume of this run [cMpc/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">lbox</span></code>: Box side size of the full simulated volume [Mpc/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">ode_solver_precision</span></code>: accuracy applied when solving the ODE system of the physical model.</li>
+<li><code class="docutils literal notranslate"><span class="pre">particle_mass</span></code>: dark matter particle mass of this simulation [Msun/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">redshift</span></code>: output redshift</li>
+<li><code class="docutils literal notranslate"><span class="pre">seed</span></code>: The seed value used in the random number engines</li>
+<li><code class="docutils literal notranslate"><span class="pre">shark_git_has_local_changes</span></code>: whether this shark instance had uncommitted local changes</li>
+<li><code class="docutils literal notranslate"><span class="pre">shark_git_revision</span></code>: the git revision of shark used to produce this data</li>
+<li><code class="docutils literal notranslate"><span class="pre">shark_version</span></code>: the shark version</li>
+<li><code class="docutils literal notranslate"><span class="pre">skip_missing_descendants</span></code>: boolean parameter that sets whether the code ignores subhalos that have no descendants.</li>
+<li><code class="docutils literal notranslate"><span class="pre">snapshot</span></code>: output snapshot</li>
+<li><code class="docutils literal notranslate"><span class="pre">timestamp</span></code>: time at which this shark execution started</li>
+<li><code class="docutils literal notranslate"><span class="pre">tot_n_subvolumes</span></code>: Total number of subvolumes in which the simulated box was divided into</li>
+</ul>
+</div>
+<div class="section" id="subhalo">
+<h3><code class="docutils literal notranslate"><span class="pre">subhalo</span></code><a class="headerlink" href="#subhalo" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">descendant_id</span></code>: id of the subhalo that is the descendant of this subhalo</li>
+<li><code class="docutils literal notranslate"><span class="pre">host_id</span></code>: id of the host halo of this subhalo</li>
+<li><code class="docutils literal notranslate"><span class="pre">id</span></code>: Subhalo id</li>
+<li><code class="docutils literal notranslate"><span class="pre">infall_time_subhalo</span></code>: redshift at which the subhalo became a SATELLITE (only well defined for satellite subhalos)</li>
+<li><code class="docutils literal notranslate"><span class="pre">main_progenitor</span></code>: =1 if subhalo is the main progenitor’ =0 otherwise.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="star-formation-histories">
+<h2>Star formation histories<a class="headerlink" href="#star-formation-histories" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="bulges-diskins">
+<h3><code class="docutils literal notranslate"><span class="pre">bulges_diskins</span></code><a class="headerlink" href="#bulges-diskins" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">metallicity_histories</span></code>: Stellar metallicity of the stars formed in a timestep that by this output time ends up in the bulge formed via disk instabilities</li>
+<li><code class="docutils literal notranslate"><span class="pre">star_formation_rate_histories</span></code>: Star formation history of stars formed that by this output time end up in the bulge formed via disk instabilities [Msun/yr/h]</li>
+</ul>
+</div>
+<div class="section" id="bulges-mergers">
+<h3><code class="docutils literal notranslate"><span class="pre">bulges_mergers</span></code><a class="headerlink" href="#bulges-mergers" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">metallicity_histories</span></code>: Stellar metallicity of the stars formed in a timestep that by this output time ends up in the bulge formed via galaxy mergers</li>
+<li><code class="docutils literal notranslate"><span class="pre">star_formation_rate_histories</span></code>: Star formation history of stars formed that by this output time end up in the bulge formed via galaxy mergers [Msun/yr/h]</li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h3><code class="docutils literal notranslate"><span class="pre">cosmology</span></code><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">h</span></code>: normalization of hubble parameter H0 = h * 100 (km/s)/Mpc</li>
+<li><code class="docutils literal notranslate"><span class="pre">n_s</span></code>: scalar spectral index assumed in simulation</li>
+<li><code class="docutils literal notranslate"><span class="pre">omega_b</span></code>: omega baryon assumed in simulation</li>
+<li><code class="docutils literal notranslate"><span class="pre">omega_l</span></code>: omega lambda assumed in simulation</li>
+<li><code class="docutils literal notranslate"><span class="pre">omega_m</span></code>: omega matter assumed in simulation</li>
+<li><code class="docutils literal notranslate"><span class="pre">sigma8</span></code>: fluctuation amplitude at 8 Mpc/h</li>
+<li><code class="docutils literal notranslate"><span class="pre">delta_t</span></code>: Time interval covered between snapshots [Gyr]</li>
+</ul>
+</div>
+<div class="section" id="disks">
+<h3><code class="docutils literal notranslate"><span class="pre">disks</span></code><a class="headerlink" href="#disks" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">metallicity_histories</span></code>: Stellar metallicity of the stars formed in a timestep that by this output time ends up in the disk</li>
+<li><code class="docutils literal notranslate"><span class="pre">star_formation_rate_histories</span></code>: Star formation history of stars formed that by this output time end up in the disk [Msun/yr/h]</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h3><code class="docutils literal notranslate"><span class="pre">galaxies</span></code><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">id_galaxy</span></code>: galaxy ID. Unique to this galaxy throughout time. If this galaxy never mergers onto a central, then its ID is always the same.</li>
+<li><code class="docutils literal notranslate"><span class="pre">lbt_mean</span></code>: Look back time to mean time between snapshots [Gyr]</li>
+<li><code class="docutils literal notranslate"><span class="pre">redshifts</span></code>: Redshifts of the history outputs</li>
+</ul>
+</div>
+<div class="section" id="id4">
+<h3><code class="docutils literal notranslate"><span class="pre">run_info</span></code><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">batches</span></code>: number of batches analysed</li>
+<li><code class="docutils literal notranslate"><span class="pre">effective_volume</span></code>: effective volume of this run [cMpc/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">lbox</span></code>: Box side size of the full simulated volume [Mpc/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">ode_solver_precision</span></code>: accuracy applied when solving the ODE system of the physical model.</li>
+<li><code class="docutils literal notranslate"><span class="pre">particle_mass</span></code>: dark matter particle mass of this simulation [Msun/h]</li>
+<li><code class="docutils literal notranslate"><span class="pre">redshift</span></code>: output redshift</li>
+<li><code class="docutils literal notranslate"><span class="pre">seed</span></code>: The seed value used in the random number engines</li>
+<li><code class="docutils literal notranslate"><span class="pre">shark_git_has_local_changes</span></code>: whether this shark instance had uncommitted local changes</li>
+<li><code class="docutils literal notranslate"><span class="pre">shark_git_revision</span></code>: the git revision of shark used to produce this data</li>
+<li><code class="docutils literal notranslate"><span class="pre">shark_version</span></code>: the shark version</li>
+<li><code class="docutils literal notranslate"><span class="pre">skip_missing_descendants</span></code>: boolean parameter that sets whether the code ignores subhalos that have no descendants.</li>
+<li><code class="docutils literal notranslate"><span class="pre">snapshot</span></code>: output snapshot</li>
+<li><code class="docutils literal notranslate"><span class="pre">timestamp</span></code>: time at which this shark execution started</li>
+<li><code class="docutils literal notranslate"><span class="pre">tot_n_subvolumes</span></code>: Total number of subvolumes in which the simulated box was divided into</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="optim.html" class="btn btn-neutral float-right" title="Optimization" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="hpc.html" class="btn btn-neutral float-left" title="HPC systems" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright UWA (in the framework of ICRAR).
+ICRAR - International Centre for Radio Astronomy Research.
+UWA - The University of Western Australia, 2018.
+      
+        <span class="commit">
+          Revision <code>b38dec41</code>.
+        </span>
+      
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book"> Read the Docs</span>
+      v: latest
+      <span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      <dl>
+        <dt>Versions</dt>
+        
+          <dd><a href="/en/latest/">latest</a></dd>
+        
+          <dd><a href="/en/stable/">stable</a></dd>
+        
+          <dd><a href="/en/devel/">devel</a></dd>
+        
+      </dl>
+      <dl>
+        <dt>Downloads</dt>
+        
+          <dd><a href="//readthedocs.org/projects/shark-sam/downloads/pdf/latest/">pdf</a></dd>
+        
+          <dd><a href="//readthedocs.org/projects/shark-sam/downloads/htmlzip/latest/">htmlzip</a></dd>
+        
+      </dl>
+      <dl>
+        <dt>On Read the Docs</dt>
+          <dd>
+            <a href="//readthedocs.org/projects/shark-sam/?fromdocs=shark-sam">Project Home</a>
+          </dd>
+          <dd>
+            <a href="//readthedocs.org/builds/shark-sam/?fromdocs=shark-sam">Builds</a>
+          </dd>
+      </dl>
+      <hr/>
+      Free document hosting provided by <a href="http://www.readthedocs.org">Read the Docs</a>.
+
+    </div>
+  </div>
+
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+   
+
+</body>
+</html>
