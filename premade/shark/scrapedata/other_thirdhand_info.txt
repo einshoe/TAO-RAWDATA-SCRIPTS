@@ -1,0 +1,2 @@
+fieldname=msgas_bulge label=mgas_bulge units=MSun/h description=gas mass of the bulge
+fieldname=s_hi label=s_hi units=none description=21 cm HI flux from atomic hydrogen in the galaxy

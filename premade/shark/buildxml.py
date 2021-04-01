@@ -4,6 +4,7 @@ import argparse
 import sys
 import re
 
+label_map = {}
 description_map = {}
 units_map = {}
 tao_bandpass_name = {}
@@ -11,6 +12,34 @@ delimiters = "<",">"
 regexPattern = '|'.join(map(re.escape, delimiters))
 
 def scrape_metadata():
+    with open("./scrapedata/other_thirdhand_info.txt", "r") as f:
+        data = f.read()
+        lines = re.split("\n", data)
+        for index in range(len(lines)):
+            line = lines[index].strip()
+            tokens = line.split(" ")
+
+            if tokens[0].startswith("fieldname="):
+                fieldname = tokens[0][len("fieldname="):]
+                label = fieldname
+                if tokens[1].startswith("label="):
+                    label = tokens[1][len("label="):]
+                if tokens[2].startswith("units="):
+                    units = tokens[2][len("units="):]
+                if tokens[3].startswith("description="):
+                    description = tokens[3][len("description="):]
+                    for index in range(4,len(tokens)):
+                        description += " "+tokens[index]
+                if not fieldname in description_map:
+                    label_map[fieldname] = label
+                    description_map[fieldname] = description
+                    if units != "none":
+                        units_map[fieldname] = units
+                    print("fieldname from thirdhand=["+fieldname+"] description=["+description+"] label=["+label+"]")
+                else:
+                    print("SKIP fieldname from thirdhand=["+fieldname+"] description=["+description+"]")
+                    pass
+
     with open("./scrapedata/output_files.html", "r") as f:
         data = f.read()
         lines = re.split(regexPattern, data)
@@ -97,18 +126,21 @@ def scrape_metadata():
 
 def get_scraped_label(name):
     if name.startswith("dust_"):
-        return name[5:]+"(dust)"
+        return name[5:]+" (With Dust)"
     if name.startswith("nodust_"):
-        return name[7:]+"(nodust)"
+        return name[7:]
+    if name in label_map:
+        print("label_map["+name+"]="+label_map[name])
+        return label_map[name]
     return name
 
 def get_scraped_description(name):
     if name in description_map:
         return description_map[name]
     if name.startswith("dust_"):
-        return name[5:]+"(dust)"
+        return name[5:]+" (With Dust)"
     if name.startswith("nodust_"):
-        return name[7:]+"(nodust)"
+        return name[7:]
     return name
 
 def get_scraped_units(name):
@@ -175,8 +207,8 @@ def print_attrs(name, obj):
        tao_bandpass_name["S350_Herschel"] = "Herschel/SPIRE 350"
        tao_bandpass_name["S450_Herschel"] = "Herschel/SPIRE 450"
        tao_bandpass_name["S500_Herschel"] = "Herschel/SPIRE 500"
-       tao_bandpass_name["FUV_GALEX"] = "GALEX_FUV"
-       tao_bandpass_name["NUV_GALEX"] = "GALEX_NUV"
+       tao_bandpass_name["FUV_GALEX"] = "GALEX FUV"
+       tao_bandpass_name["NUV_GALEX"] = "GALEX NUV"
        tao_bandpass_name["u_SDSS"] = "SDSS u"
        tao_bandpass_name["g_SDSS"] = "SDSS g"
        tao_bandpass_name["r_SDSS"] = "SDSS r"
@@ -221,9 +253,9 @@ def print_attrs(name, obj):
                 for agroup in groups.keys():
                     if agroup in name:
                         if name.startswith("dust_"):
-                            group = get_scraped_group(agroup)+"(dust)"
+                            group = get_scraped_group(agroup)+" (With Dust)"
                         if name.startswith("nodust_"):
-                            group = get_scraped_group(agroup)+"(nodust)"
+                            group = get_scraped_group(agroup)
 
                 dataxml.write("    <Field Type=\""+type+"\"\n")
                 dataxml.write("     label=\""+label+"\"\n")
@@ -267,7 +299,7 @@ def print_attrs(name, obj):
                             if groups[agroup] == 2:
                                 isfield = False
                             groups[agroup] = 2
-                            field = get_scraped_group(agroup)+"(dust)"
+                            field = get_scraped_group(agroup)+" (With Dust)"
                             label = field
                             description = field
                             break
@@ -278,7 +310,7 @@ def print_attrs(name, obj):
                                 isfield = False
                             isfield = False # because we have done it as a doublet
                             groups[agroup] = 3
-                            field = get_scraped_group(agroup)+"(nodust)"
+                            field = get_scraped_group(agroup)
                             label = field
                             description = field
                             break
@@ -292,7 +324,7 @@ def print_attrs(name, obj):
                     uixml.write("     units=\""+units+"\"\n")
                     uixml.write("     group=\""+group+"\">"+field+"</Field>\n")
                     if is_dust_doublet:
-                        field = get_scraped_group(agroup)+"(nodust)"
+                        field = get_scraped_group(agroup)
                         label = field
                         description = field
                         order = str(j+1)
