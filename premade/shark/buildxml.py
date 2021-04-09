@@ -4,6 +4,8 @@ import argparse
 import sys
 import re
 
+ordered = []
+overrides = {}
 label_map = {}
 description_map = {}
 units_map = {}
@@ -11,7 +13,37 @@ tao_bandpass_name = {}
 delimiters = "<",">"
 regexPattern = '|'.join(map(re.escape, delimiters))
 
+def parse_keywords(line):
+    keywords = {}
+    rest = line
+    pos1 = rest.find('=')
+    while pos1 != -1:
+        pos2 = rest.find('=',pos1+1)
+        if pos2 == -1:
+            pos3 = len(rest)
+        else:
+            pos3 = rest.rfind(' ',0,pos2)
+        keyword = rest[:pos1]
+        value = rest[pos1+1:pos3]
+        keywords[keyword] = value
+        rest = rest[pos3+1:]
+        print("\t_k="+keyword+"=["+value+"]")
+        pos1 = rest.find('=')
+    return keywords
+
 def scrape_metadata():
+    with open("./scrapedata/overwrite_first_draft_dont_delete.txt", "r") as f:
+        data = f.read()
+        lines = re.split("\n", data)
+        print("lines="+str(len(lines)))
+        for index in range(len(lines)):
+            line = lines[index].strip()
+            if line == "":
+                continue
+            print("++"+line)
+            keywords = parse_keywords(line)
+            fieldname = keywords["fieldname"]
+            overrides[fieldname] = keywords
     with open("./scrapedata/other_thirdhand_info.txt", "r") as f:
         data = f.read()
         lines = re.split("\n", data)
@@ -125,6 +157,9 @@ def scrape_metadata():
                 
 
 def get_scraped_label(name):
+    if name in overrides:
+        if "label" in overrides[name]:
+            return overrides[name]["label"]
     if name.startswith("dust_"):
         return name[5:]+" (With Dust)"
     if name.startswith("nodust_"):
@@ -149,9 +184,21 @@ def get_scraped_units(name):
     return ""
 
 def get_scraped_group(group):
+    # for array fieldnames belonging to groups
     if group in tao_bandpass_name:
         return tao_bandpass_name[group]
     return group
+
+def get_scraped_groupname(name, default):
+    if name in overrides:
+        if "group" in overrides[name]:
+            return overrides[name]["group"]
+    return default
+
+def get_scraped_order(name):
+    for i in range(len(ordered)):
+        if ordered[i] == name:
+            return i+1
 
 def print_attrs(name, obj):
     maxrows = 10
@@ -230,9 +277,29 @@ def print_attrs(name, obj):
        tao_bandpass_name["P100_Herschel"] = "Herschel/PACS 100"
        tao_bandpass_name["P160_Herschel"] = "Herschel/PACS 160"
        header = ""
+       # Initialise ordered
+       for i in range(0,len(obj.dtype)):
+           name = str(obj.dtype.descr[i][0])
+           ordered.append(name)
+       # process OrderBeforeFieldname
+       for i in range(0,len(obj.dtype)):
+           name = str(obj.dtype.descr[i][0])
+           if "OrderBeforeFieldname" in overrides[name]:
+               a_index = get_scraped_order(name)-1
+               b_index = get_scraped_order(overrides[name]["OrderBeforeFieldname"])-1
+               print("Field[{}]={} Before[{}]={}".format(a_index,ordered[a_index],b_index,ordered[b_index]))
+               if a_index < b_index:
+                   for ii in range(a_index+1, b_index):
+                       ordered[ii-1] = ordered[ii]
+                   ordered[b_index-1] = name
+               else:
+                   for ii in range(a_index-1, b_index-1, -1):
+                       print("move [{}]={} to [{}]={}".format(ii,ordered[ii],ii+1,ordered[ii+1]))
+                       ordered[ii+1] = ordered[ii]
+                   ordered[b_index] = name
+
        print("I think the following xml is for the hdf5 sidecar xml "+args.magnitude)
        with open("as.xml", "w") as dataxml:
-            dataxml.write("<settings>\n")
             dataxml.write("  <sageinput>\n")
             for i in range(0,len(obj.dtype)):
                 type = str(obj.dtype.descr[i][1])
@@ -247,6 +314,8 @@ def print_attrs(name, obj):
                 order = str(i+1)
                 group = "Galaxy/Halo Properties"
                 name = str(obj.dtype.descr[i][0])
+                order = str(get_scraped_order(name))
+                group = get_scraped_groupname(name, group)
                 label = get_scraped_label(name)
                 description = get_scraped_description(name)
                 units = get_scraped_units(name)
@@ -264,12 +333,38 @@ def print_attrs(name, obj):
                 dataxml.write("     units=\""+units+"\"\n")
                 dataxml.write("     group=\""+group+"\">"+name.lower()+"</Field>\n")
             dataxml.write("  </sageinput>\n")
-            dataxml.write("</settings>\n")
        print("I think the following xml is for the import process on TAOUI")
+       with open("as.ui.txt", "w") as uitxt:
+           for i in range(0,len(obj.dtype)):
+                #print("i="+str(i))
+                type = str(obj.dtype.descr[i][1])
+                if type == "<f8":
+                    type = "float"
+                if type == "<f4":
+                    type = "float"
+                if type == "<i4":
+                    type = "int"
+                if type == "<i8":
+                    type = "long long"
+                order = str(i+1)
+                group = "Galaxy/Halo Properties"
+                name = str(obj.dtype.descr[i][0])
+                order = str(get_scraped_order(name))
+                group = get_scraped_groupname(name, group)
+                label = get_scraped_label(name)
+                units = get_scraped_units(name)
+                if units == "":
+                    units = "none"
+                description = get_scraped_description(name)
+                if "OrderBeforeFieldname" in overrides[name]:
+                    uitxt.write("fieldname="+name+" label="+label+" units="+units+" description="+description+" group="+group+" OrderBeforeFieldname="+overrides[name]["OrderBeforeFieldname"]+"\n")
+                else:
+                    uitxt.write("fieldname="+name+" label="+label+" units="+units+" description="+description+" group="+group+"\n")
        with open("as.ui.xml", "w") as uixml:
             uixml.write("<settings>\n")
             uixml.write("  <sageinput>\n")
             j = 0
+            very_first_Magnitude_field = True
             for i in range(0,len(obj.dtype)):
                 #print("i="+str(i))
                 type = str(obj.dtype.descr[i][1])
@@ -285,6 +380,8 @@ def print_attrs(name, obj):
                 units = ""
                 group = "Galaxy/Halo Properties"
                 name = str(obj.dtype.descr[i][0])
+                order = str(get_scraped_order(name))
+                group = get_scraped_groupname(name, group)
                 label = get_scraped_label(name)
                 description = get_scraped_description(name)
                 units = get_scraped_units(name)
@@ -294,6 +391,10 @@ def print_attrs(name, obj):
                 for agroup in groups.keys():
                     if agroup in name:
                         if name.startswith("dust_"):
+                            if very_first_Magnitude_field:
+                                very_first_Magnitude_field = False
+                                j = get_scraped_order(name) - 1
+                                # Note we are assuming from this field forward on all rest of the fields will be "Magnitude" fields
                             is_dust_doublet = True
                             group = "Galaxy Magnitudes"
                             if groups[agroup] == 2:
@@ -316,23 +417,29 @@ def print_attrs(name, obj):
                             break
 
                 if isfield:
-                    j = j + 1
-                    uixml.write("    <Field Type=\""+type+"\"\n")
-                    uixml.write("     label=\""+label+"\"\n")
-                    uixml.write("     description=\""+description+"\"\n")
-                    uixml.write("     order=\""+order+"\"\n")
-                    uixml.write("     units=\""+units+"\"\n")
-                    uixml.write("     group=\""+group+"\">"+field+"</Field>\n")
-                    if is_dust_doublet:
-                        field = get_scraped_group(agroup)
-                        label = field
-                        description = field
-                        order = str(j+1)
-                        j = j + 1
+                    if not is_dust_doublet:
                         uixml.write("    <Field Type=\""+type+"\"\n")
                         uixml.write("     label=\""+label+"\"\n")
                         uixml.write("     description=\""+description+"\"\n")
                         uixml.write("     order=\""+order+"\"\n")
+                        uixml.write("     units=\""+units+"\"\n")
+                        uixml.write("     group=\""+group+"\">"+field+"</Field>\n")
+                    else:
+                        j = j + 1
+                        uixml.write("    <Field Type=\""+type+"\"\n")
+                        uixml.write("     label=\""+label+"\"\n")
+                        uixml.write("     description=\""+description+"\"\n")
+                        uixml.write("     order=\""+str(j)+"\"\n")
+                        uixml.write("     units=\""+units+"\"\n")
+                        uixml.write("     group=\""+group+"\">"+field+"</Field>\n")
+                        field = get_scraped_group(agroup)
+                        label = field
+                        description = field
+                        j = j + 1
+                        uixml.write("    <Field Type=\""+type+"\"\n")
+                        uixml.write("     label=\""+label+"\"\n")
+                        uixml.write("     description=\""+description+"\"\n")
+                        uixml.write("     order=\""+str(j)+"\"\n")
                         uixml.write("     units=\""+units+"\"\n")
                         uixml.write("     group=\""+group+"\">"+field+"</Field>\n")
             uixml.write("  </sageinput>\n")
