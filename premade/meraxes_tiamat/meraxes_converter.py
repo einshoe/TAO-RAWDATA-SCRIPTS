@@ -7,7 +7,7 @@ import fields_xml
 
 def read_file(file):
     f = h5py.File(file,'r')
-    fields = fields_xml.SageSettingsXML("settings.xml")
+    fields = fields_xml.SageSettingsXML("metadata_meraxes_abs_mags_premade_testing.xml")
     print(fields.getNumberOfFields())
     for i in range(0,fields.getNumberOfFields()):
         field = fields.getItem(i)
