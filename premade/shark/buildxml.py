@@ -10,6 +10,7 @@ label_map = {}
 description_map = {}
 units_map = {}
 tao_bandpass_name = {}
+tao_bandpass_relative_order = {}
 delimiters = "<",">"
 regexPattern = '|'.join(map(re.escape, delimiters))
 
@@ -156,29 +157,48 @@ def scrape_metadata():
                 print("LINE["+line+"] fieldname["+fieldname+"] description["+description+"]")
                 
 
-def get_scraped_label(name):
+def get_scraped_label(name, show_with_dust):
     if name in overrides:
         if "label" in overrides[name]:
             return overrides[name]["label"]
     if name.startswith("dust_"):
-        return name[5:]+" (With Dust)"
+        if show_with_dust:
+            return name[5:]+" (With dust)"
+        else:
+            return name[5:]
     if name.startswith("nodust_"):
-        return name[7:]
+        if show_with_dust:
+            return name[7:]
+        else:
+            return name[7:]+" (no dust)"
     if name in label_map:
         print("label_map["+name+"]="+label_map[name])
         return label_map[name]
     return name
 
-def get_scraped_description(name):
+def get_scraped_description(name, show_with_dust):
+    if name in overrides:
+        if "description" in overrides[name]:
+            return overrides[name]["description"]
     if name in description_map:
         return description_map[name]
     if name.startswith("dust_"):
-        return name[5:]+" (With Dust)"
+        if show_with_dust:
+            return name[5:]+" (With dust)"+" (bulge_d, bulge_m, bulge_t, disk, total)"
+        else:
+            return name[5:]+" (bulge_d, bulge_m, bulge_t, disk, total)"
     if name.startswith("nodust_"):
-        return name[7:]
+        if show_with_dust:
+            return name[7:]+" (bulge_d, bulge_m, bulge_t, disk, total)"
+        else:
+            return name[7:]+" (no dust)"+" (bulge_d, bulge_m, bulge_t, disk, total)"
     return name
 
 def get_scraped_units(name):
+    if name in overrides:
+        if "units" in overrides[name]:
+            if overrides[name]["units"] != "none":
+                return overrides[name]["units"]
     if name in units_map:
         return units_map[name]
     return ""
@@ -201,6 +221,7 @@ def get_scraped_order(name):
             return i+1
 
 def print_attrs(name, obj):
+    show_with_dust = True
     maxrows = 10
     firstcolumn=-1
     lastcolumn=-1
@@ -276,6 +297,41 @@ def print_attrs(name, obj):
        tao_bandpass_name["P70_Herschel"] = "Herschel/PACS 70"
        tao_bandpass_name["P100_Herschel"] = "Herschel/PACS 100"
        tao_bandpass_name["P160_Herschel"] = "Herschel/PACS 160"
+
+       tao_bandpass_relative_order[tao_bandpass_name["Band4_ALMA"]] = 0
+       tao_bandpass_relative_order[tao_bandpass_name["Band5_ALMA"]] = 1
+       tao_bandpass_relative_order[tao_bandpass_name["Band6_ALMA"]] = 2
+       tao_bandpass_relative_order[tao_bandpass_name["Band7_ALMA"]] = 3
+       tao_bandpass_relative_order[tao_bandpass_name["Band8_ALMA"]] = 4
+       tao_bandpass_relative_order[tao_bandpass_name["Band9_ALMA"]] = 5
+       tao_bandpass_relative_order[tao_bandpass_name["S450_JCMT"]] = 6
+       tao_bandpass_relative_order[tao_bandpass_name["S850_JCMT"]] = 7
+       tao_bandpass_relative_order[tao_bandpass_name["S250_Herschel"]] = 8
+       tao_bandpass_relative_order[tao_bandpass_name["S350_Herschel"]] = 9
+       tao_bandpass_relative_order[tao_bandpass_name["S450_Herschel"]] = 10
+       tao_bandpass_relative_order[tao_bandpass_name["S500_Herschel"]] = 11
+       tao_bandpass_relative_order[tao_bandpass_name["FUV_GALEX"]] = 12
+       tao_bandpass_relative_order[tao_bandpass_name["NUV_GALEX"]] = 13
+       tao_bandpass_relative_order[tao_bandpass_name["u_SDSS"]] = 14
+       tao_bandpass_relative_order[tao_bandpass_name["g_SDSS"]] = 15
+       tao_bandpass_relative_order[tao_bandpass_name["r_SDSS"]] = 16
+       tao_bandpass_relative_order[tao_bandpass_name["i_SDSS"]] = 17
+       tao_bandpass_relative_order[tao_bandpass_name["z_SDSS"]] = 18
+       tao_bandpass_relative_order[tao_bandpass_name["Y_VISTA"]] = 19
+       tao_bandpass_relative_order[tao_bandpass_name["J_VISTA"]] = 20
+       tao_bandpass_relative_order[tao_bandpass_name["H_VISTA"]] = 21
+       tao_bandpass_relative_order[tao_bandpass_name["K_VISTA"]] = 22
+       tao_bandpass_relative_order[tao_bandpass_name["W1_WISE"]] = 23
+       tao_bandpass_relative_order[tao_bandpass_name["W2_WISE"]] = 24
+       tao_bandpass_relative_order[tao_bandpass_name["W3_WISE"]] = 25
+       tao_bandpass_relative_order[tao_bandpass_name["W4_WISE"]] = 26
+       tao_bandpass_relative_order[tao_bandpass_name["I1_Spitzer"]] = 27
+       tao_bandpass_relative_order[tao_bandpass_name["I2_Spitzer"]] = 28
+       tao_bandpass_relative_order[tao_bandpass_name["I3_Spitzer"]] = 29
+       tao_bandpass_relative_order[tao_bandpass_name["I4_Spitzer"]] = 30
+       tao_bandpass_relative_order[tao_bandpass_name["P70_Herschel"]] = 31
+       tao_bandpass_relative_order[tao_bandpass_name["P100_Herschel"]] = 32
+       tao_bandpass_relative_order[tao_bandpass_name["P160_Herschel"]] = 33
        header = ""
        # Initialise ordered
        for i in range(0,len(obj.dtype)):
@@ -316,15 +372,21 @@ def print_attrs(name, obj):
                 name = str(obj.dtype.descr[i][0])
                 order = str(get_scraped_order(name))
                 group = get_scraped_groupname(name, group)
-                label = get_scraped_label(name)
-                description = get_scraped_description(name)
+                label = get_scraped_label(name, show_with_dust)
+                description = get_scraped_description(name, show_with_dust)
                 units = get_scraped_units(name)
                 for agroup in groups.keys():
                     if agroup in name:
                         if name.startswith("dust_"):
-                            group = get_scraped_group(agroup)+" (With Dust)"
+                            if show_with_dust:
+                                group = get_scraped_group(agroup)+" (With dust)"
+                            else:
+                                group = get_scraped_group(agroup)
                         if name.startswith("nodust_"):
-                            group = get_scraped_group(agroup)
+                            if show_with_dust:
+                                group = get_scraped_group(agroup)
+                            else:
+                                group = get_scraped_group(agroup)+" (no dust)"
 
                 dataxml.write("    <Field Type=\""+type+"\"\n")
                 dataxml.write("     label=\""+label+"\"\n")
@@ -351,11 +413,11 @@ def print_attrs(name, obj):
                 name = str(obj.dtype.descr[i][0])
                 order = str(get_scraped_order(name))
                 group = get_scraped_groupname(name, group)
-                label = get_scraped_label(name)
+                label = get_scraped_label(name, show_with_dust)
                 units = get_scraped_units(name)
                 if units == "":
                     units = "none"
-                description = get_scraped_description(name)
+                description = get_scraped_description(name, show_with_dust)
                 if "OrderBeforeFieldname" in overrides[name]:
                     uitxt.write("fieldname="+name+" label="+label+" units="+units+" description="+description+" group="+group+" OrderBeforeFieldname="+overrides[name]["OrderBeforeFieldname"]+"\n")
                 else:
@@ -364,6 +426,7 @@ def print_attrs(name, obj):
             uixml.write("<settings>\n")
             uixml.write("  <sageinput>\n")
             j = 0
+            jstart = 0
             very_first_Magnitude_field = True
             for i in range(0,len(obj.dtype)):
                 #print("i="+str(i))
@@ -382,27 +445,37 @@ def print_attrs(name, obj):
                 name = str(obj.dtype.descr[i][0])
                 order = str(get_scraped_order(name))
                 group = get_scraped_groupname(name, group)
-                label = get_scraped_label(name)
-                description = get_scraped_description(name)
+                label = get_scraped_label(name, show_with_dust)
+                description = get_scraped_description(name, show_with_dust)
                 units = get_scraped_units(name)
                 field = name
                 isfield = True
                 is_dust_doublet = False
+                five = " (bulge_d, bulge_m, bulge_t, disk, total)"
+                five = "&lt;br&gt;Magnitudes correspond to AB magnitudes and are presented for 5 galaxy components - bulge_d, bulge_m, bulge_t, disk, total.&lt;br&gt;bulge_d: corresponds to light associated with stars that are in the bulge that formed during starbursts driven by disk instabilities"\
+"&lt;br&gt;bulge_m: corresponds to light associated with stars that are in the bulge that formed during starbursts driven by galaxy mergers "\
+"&lt;br&gt;bulge_t: corresponds to light associated with all stars in the bulge"\
+"&lt;br&gt;disk: corresponds to light associated with all stars in the disk"\
+"&lt;br&gt;total: corresponds to light associated with all stars in the galaxy"
                 for agroup in groups.keys():
                     if agroup in name:
                         if name.startswith("dust_"):
                             if very_first_Magnitude_field:
                                 very_first_Magnitude_field = False
                                 j = get_scraped_order(name) - 1
+                                jstart = j
                                 # Note we are assuming from this field forward on all rest of the fields will be "Magnitude" fields
                             is_dust_doublet = True
                             group = "Galaxy Magnitudes"
                             if groups[agroup] == 2:
                                 isfield = False
                             groups[agroup] = 2
-                            field = get_scraped_group(agroup)+" (With Dust)"
+                            if show_with_dust:
+                                field = get_scraped_group(agroup)+" (With dust)"
+                            else:
+                                field = get_scraped_group(agroup)
                             label = field
-                            description = field
+                            description = field+five
                             break
                         if name.startswith("nodust_"):
                             is_dust_doublet = True
@@ -411,37 +484,63 @@ def print_attrs(name, obj):
                                 isfield = False
                             isfield = False # because we have done it as a doublet
                             groups[agroup] = 3
-                            field = get_scraped_group(agroup)
+                            if show_with_dust:
+                                field = get_scraped_group(agroup)
+                            else:
+                                field = get_scraped_group(agroup)+" (no dust)"
                             label = field
-                            description = field
+                            description = field+five
                             break
 
                 if isfield:
-                    if not is_dust_doublet:
-                        uixml.write("    <Field Type=\""+type+"\"\n")
-                        uixml.write("     label=\""+label+"\"\n")
-                        uixml.write("     description=\""+description+"\"\n")
-                        uixml.write("     order=\""+order+"\"\n")
-                        uixml.write("     units=\""+units+"\"\n")
-                        uixml.write("     group=\""+group+"\">"+field+"</Field>\n")
-                    else:
-                        j = j + 1
-                        uixml.write("    <Field Type=\""+type+"\"\n")
-                        uixml.write("     label=\""+label+"\"\n")
-                        uixml.write("     description=\""+description+"\"\n")
-                        uixml.write("     order=\""+str(j)+"\"\n")
-                        uixml.write("     units=\""+units+"\"\n")
-                        uixml.write("     group=\""+group+"\">"+field+"</Field>\n")
-                        field = get_scraped_group(agroup)
-                        label = field
-                        description = field
-                        j = j + 1
-                        uixml.write("    <Field Type=\""+type+"\"\n")
-                        uixml.write("     label=\""+label+"\"\n")
-                        uixml.write("     description=\""+description+"\"\n")
-                        uixml.write("     order=\""+str(j)+"\"\n")
-                        uixml.write("     units=\""+units+"\"\n")
-                        uixml.write("     group=\""+group+"\">"+field+"</Field>\n")
+                    if (group != "Internal"):
+                        if not is_dust_doublet:
+                            uixml.write("    <Field Type=\""+type+"\"\n")
+                            uixml.write("     label=\""+label+"\"\n")
+                            uixml.write("     description=\""+description+"\"\n")
+                            uixml.write("     order=\""+order+"\"\n")
+                            uixml.write("     units=\""+units+"\"\n")
+                            uixml.write("     group=\""+group+"\">"+field+"</Field>\n")
+                        else:
+                            if show_with_dust:
+                                field = get_scraped_group(agroup)+" (With dust)"
+                                label = field
+                                description = field+five
+                                j = j + 1
+                                uixml.write("    <Field Type=\""+type+"\"\n")
+                                uixml.write("     label=\""+label+"\"\n")
+                                uixml.write("     description=\""+description+"\"\n")
+                                uixml.write("     order=\""+str(jstart+2*tao_bandpass_relative_order[get_scraped_group(agroup)])+"\"\n")
+                                uixml.write("     units=\""+units+"\"\n")
+                                uixml.write("     group=\""+group+"\">"+field+"</Field>\n")
+                                field = get_scraped_group(agroup)
+                                label = field
+                                description = field+five
+                                j = j + 1
+                                uixml.write("    <Field Type=\""+type+"\"\n")
+                                uixml.write("     label=\""+label+"\"\n")
+                                uixml.write("     description=\""+description+"\"\n")
+                                uixml.write("     order=\""+str(jstart+2*tao_bandpass_relative_order[get_scraped_group(agroup)]+1)+"\"\n")
+                                uixml.write("     units=\""+units+"\"\n")
+                                uixml.write("     group=\""+group+"\">"+field+"</Field>\n")
+                            else:
+                                j = j + 1
+                                uixml.write("    <Field Type=\""+type+"\"\n")
+                                uixml.write("     label=\""+label+"\"\n")
+                                uixml.write("     description=\""+description+"\"\n")
+                                uixml.write("     order=\""+str(jstart+2*tao_bandpass_relative_order[get_scraped_group(agroup)])+"\"\n")
+                                uixml.write("     units=\""+units+"\"\n")
+                                uixml.write("     group=\""+group+"\">"+field+"</Field>\n")
+                                field = get_scraped_group(agroup)+" (no dust)"
+                                label = field
+                                description = field+five
+                                j = j + 1
+                                uixml.write("    <Field Type=\""+type+"\"\n")
+                                uixml.write("     label=\""+label+"\"\n")
+                                uixml.write("     description=\""+description+"\"\n")
+                                uixml.write("     order=\""+str(jstart+2*tao_bandpass_relative_order[get_scraped_group(agroup)]+1)+"\"\n")
+                                uixml.write("     units=\""+units+"\"\n")
+                                uixml.write("     group=\""+group+"\">"+field+"</Field>\n")
             uixml.write("  </sageinput>\n")
             uixml.write("</settings>\n")
 

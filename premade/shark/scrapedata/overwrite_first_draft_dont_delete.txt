@@ -1,17 +1,17 @@
 fieldname=cnfw_subhalo label=Subhalo concentration units=dimensionless description=NFW concentration parameter of the dark matter subhalo in which this galaxy resides. In the case of type 2 satellites, this corresponds to the concentration its subhalo had before disappearing from the subhalo catalogs. group=Galaxy/Halo Properties
 fieldname=dc label=Co-moving distance units=simulation units = Mpc/h description=comoving distance group=Positions & Velocities
 fieldname=dec label=Declination units=rad description=declination group=Positions & Velocities
-fieldname=id_galaxy_sam label=Galaxy ID units=none description=galaxy ID in the SAM group=Galaxy/Halo Properties
+fieldname=id_galaxy_sam label=Galaxy ID units=none description=galaxy ID in the SAM group=Internal
 fieldname=id_galaxy_sky label=id_galaxy_sky units=none description=unique ID in the mock sky group=Galaxy/Halo Properties
 fieldname=id_group_sky label=id_group_sky units=none description=unique group ID in the mock sky group=Galaxy/Halo Properties
-fieldname=id_halo_sam label=Halo ID units=none description=galaxy parent halo ID in the SAM group=Galaxy/Halo Properties
+fieldname=id_halo_sam label=Halo ID units=none description=galaxy parent halo ID in the SAM group=Internal
 fieldname=inclination label=inclination units=rad description=inclination group=Galaxy/Halo Properties
 fieldname=jbulge label=Bulge specific angular momentum units=cMpc/h km/s description=specific angular momentum of the bulge group=Galaxy/Halo Properties
 fieldname=jdisk label=Disk specific angular momentum units=cMpc/h km/s description=specific angular momentum of the disk group=Galaxy/Halo Properties
-fieldname=l_x label=L (X) units=Msun pMpc km/s description=total angular momentum component x of galaxy. In the case of type 2 galaxies, the AM vector is randomly oriented. group=Galaxy/Halo Properties
-fieldname=l_y label=L (Y) units=Msun pMpc km/s description=total angular momentum component y of galaxy. In the case of type 2 galaxies, the AM vector is randomly oriented. group=Galaxy/Halo Properties
-fieldname=l_z label=L (Z) units=Msun pMpc km/s description=total angular momentum component z of galaxy. In the case of type 2 galaxies, the AM vector is randomly oriented. group=Galaxy/Halo Properties
-fieldname=mag label=Apparent magnitude units=none description=apparent magnitude (generic: M/L ratio of 1, no k-correction) group=Galaxy/Halo Properties
+fieldname=l_x label=L (X) units=Msun pMpc km/s description=X component of the total angular momentum of the galaxy. In the case of type 2 galaxies, the AM vector is randomly oriented. group=Galaxy/Halo Properties
+fieldname=l_y label=L (Y) units=Msun pMpc km/s description=Y component of the total angular momentum of the galaxy. In the case of type 2 galaxies, the AM vector is randomly oriented. group=Galaxy/Halo Properties
+fieldname=l_z label=L (Z) units=Msun pMpc km/s description=Z component of the total angular momentum of the galaxy. In the case of type 2 galaxies, the AM vector is randomly oriented. group=Galaxy/Halo Properties
+fieldname=mag label=Bolometric galaxy magnitude units=none description=Bolometric galaxy magnitude (generic: M/L ratio of 1, no k-correction) group=Internal
 fieldname=matom_bulge label=Bulge atomic gas mass units=Msun/h description=atomic gas mass (helium plus hydrogen) in the bulge group=Galaxy/Halo Properties
 fieldname=matom_disk label=Disk atomic gas mass units=Msun/h description=atomic gas mass (helium plus hydrogen) in the disk group=Galaxy/Halo Properties
 fieldname=mbh label=Black hole mass units=Msun/h description=black hole mass group=Galaxy/Halo Properties
@@ -38,9 +38,9 @@ fieldname=rstar_disk_intrinsic label=Intrinsic half-mass radius of disk stars un
 fieldname=s_hi label=HI flux (21 cm) units=none description=21 cm HI flux from atomic hydrogen in the galaxy group=Galaxy/Halo Properties
 fieldname=sfr_burst label=Bulge SFR units=Msun/Gyr/h description=total star formation rate taking place in bulges in the simulated box group=Galaxy/Halo Properties
 fieldname=sfr_disk label=Disk SFR units=Msun/Gyr/h description=star formation rate in the disk group=Galaxy/Halo Properties
-fieldname=snapshot label=Snapshot units=none description=output snapshot group=Galaxy/Halo Properties
-fieldname=subvolume label=Subvolume index units=none description=subvolume index group=Galaxy/Halo Properties
-fieldname=tile label=Tile ID units=none description=tile ID group=Galaxy/Halo Properties
+fieldname=snapshot label=Snapshot units=none description=output snapshot group=Internal
+fieldname=subvolume label=Subvolume index units=none description=subvolume index group=Internal
+fieldname=tile label=Tile ID units=none description=tile ID group=Internal
 fieldname=type label=Galaxy type units=none description=galaxy type; 0 for centrals; 1 for satellites that reside in well identified subhalos; 2 for orphan satellites group=Galaxy/Halo Properties
 fieldname=vpec_r label=Peculiar velocity (LOS) units=proper km/s description=line-of-sight peculiar velocity group=Positions & Velocities
 fieldname=vpec_x label=Peculiar velocity (X) units=proper km/s description=x-component of peculiar velocity group=Positions & Velocities
@@ -53,333 +53,333 @@ fieldname=zcos label=Redshift (Cosmological) units=none description=cosmological
 fieldname=zgas_bulge label=Bulge gas metallicity units=none description=metallicity of the gas in the bulge group=Galaxy/Halo Properties
 fieldname=zgas_disk label=Disk gas metallicity units=none description=metallicity of the gas in the disk group=Galaxy/Halo Properties
 fieldname=zobs label=Redshift (Observed) units=none description=redshift in observer-frame group=Positions & Velocities OrderBeforeFieldname=zcmb
-fieldname=dust_FUV_GALEX_bulge_d label=FUV_GALEX_bulge_d (With Dust) units=none description=FUV_GALEX_bulge_d (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_FUV_GALEX_bulge_m label=FUV_GALEX_bulge_m (With Dust) units=none description=FUV_GALEX_bulge_m (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_FUV_GALEX_bulge_t label=FUV_GALEX_bulge_t (With Dust) units=none description=FUV_GALEX_bulge_t (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_FUV_GALEX_disk label=FUV_GALEX_disk (With Dust) units=none description=FUV_GALEX_disk (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_FUV_GALEX_total label=FUV_GALEX_total (With Dust) units=none description=FUV_GALEX_total (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_NUV_GALEX_bulge_d label=NUV_GALEX_bulge_d (With Dust) units=none description=NUV_GALEX_bulge_d (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_NUV_GALEX_bulge_m label=NUV_GALEX_bulge_m (With Dust) units=none description=NUV_GALEX_bulge_m (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_NUV_GALEX_bulge_t label=NUV_GALEX_bulge_t (With Dust) units=none description=NUV_GALEX_bulge_t (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_NUV_GALEX_disk label=NUV_GALEX_disk (With Dust) units=none description=NUV_GALEX_disk (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_NUV_GALEX_total label=NUV_GALEX_total (With Dust) units=none description=NUV_GALEX_total (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_u_SDSS_bulge_d label=u_SDSS_bulge_d (With Dust) units=none description=u_SDSS_bulge_d (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_u_SDSS_bulge_m label=u_SDSS_bulge_m (With Dust) units=none description=u_SDSS_bulge_m (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_u_SDSS_bulge_t label=u_SDSS_bulge_t (With Dust) units=none description=u_SDSS_bulge_t (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_u_SDSS_disk label=u_SDSS_disk (With Dust) units=none description=u_SDSS_disk (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_u_SDSS_total label=u_SDSS_total (With Dust) units=none description=u_SDSS_total (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_g_SDSS_bulge_d label=g_SDSS_bulge_d (With Dust) units=none description=g_SDSS_bulge_d (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_g_SDSS_bulge_m label=g_SDSS_bulge_m (With Dust) units=none description=g_SDSS_bulge_m (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_g_SDSS_bulge_t label=g_SDSS_bulge_t (With Dust) units=none description=g_SDSS_bulge_t (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_g_SDSS_disk label=g_SDSS_disk (With Dust) units=none description=g_SDSS_disk (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_g_SDSS_total label=g_SDSS_total (With Dust) units=none description=g_SDSS_total (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_r_SDSS_bulge_d label=r_SDSS_bulge_d (With Dust) units=none description=r_SDSS_bulge_d (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_r_SDSS_bulge_m label=r_SDSS_bulge_m (With Dust) units=none description=r_SDSS_bulge_m (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_r_SDSS_bulge_t label=r_SDSS_bulge_t (With Dust) units=none description=r_SDSS_bulge_t (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_r_SDSS_disk label=r_SDSS_disk (With Dust) units=none description=r_SDSS_disk (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_r_SDSS_total label=r_SDSS_total (With Dust) units=none description=r_SDSS_total (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_i_SDSS_bulge_d label=i_SDSS_bulge_d (With Dust) units=none description=i_SDSS_bulge_d (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_i_SDSS_bulge_m label=i_SDSS_bulge_m (With Dust) units=none description=i_SDSS_bulge_m (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_i_SDSS_bulge_t label=i_SDSS_bulge_t (With Dust) units=none description=i_SDSS_bulge_t (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_i_SDSS_disk label=i_SDSS_disk (With Dust) units=none description=i_SDSS_disk (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_i_SDSS_total label=i_SDSS_total (With Dust) units=none description=i_SDSS_total (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_z_SDSS_bulge_d label=z_SDSS_bulge_d (With Dust) units=none description=z_SDSS_bulge_d (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_z_SDSS_bulge_m label=z_SDSS_bulge_m (With Dust) units=none description=z_SDSS_bulge_m (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_z_SDSS_bulge_t label=z_SDSS_bulge_t (With Dust) units=none description=z_SDSS_bulge_t (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_z_SDSS_disk label=z_SDSS_disk (With Dust) units=none description=z_SDSS_disk (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_z_SDSS_total label=z_SDSS_total (With Dust) units=none description=z_SDSS_total (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_Y_VISTA_bulge_d label=Y_VISTA_bulge_d (With Dust) units=none description=Y_VISTA_bulge_d (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_Y_VISTA_bulge_m label=Y_VISTA_bulge_m (With Dust) units=none description=Y_VISTA_bulge_m (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_Y_VISTA_bulge_t label=Y_VISTA_bulge_t (With Dust) units=none description=Y_VISTA_bulge_t (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_Y_VISTA_disk label=Y_VISTA_disk (With Dust) units=none description=Y_VISTA_disk (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_Y_VISTA_total label=Y_VISTA_total (With Dust) units=none description=Y_VISTA_total (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_J_VISTA_bulge_d label=J_VISTA_bulge_d (With Dust) units=none description=J_VISTA_bulge_d (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_J_VISTA_bulge_m label=J_VISTA_bulge_m (With Dust) units=none description=J_VISTA_bulge_m (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_J_VISTA_bulge_t label=J_VISTA_bulge_t (With Dust) units=none description=J_VISTA_bulge_t (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_J_VISTA_disk label=J_VISTA_disk (With Dust) units=none description=J_VISTA_disk (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_J_VISTA_total label=J_VISTA_total (With Dust) units=none description=J_VISTA_total (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_H_VISTA_bulge_d label=H_VISTA_bulge_d (With Dust) units=none description=H_VISTA_bulge_d (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_H_VISTA_bulge_m label=H_VISTA_bulge_m (With Dust) units=none description=H_VISTA_bulge_m (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_H_VISTA_bulge_t label=H_VISTA_bulge_t (With Dust) units=none description=H_VISTA_bulge_t (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_H_VISTA_disk label=H_VISTA_disk (With Dust) units=none description=H_VISTA_disk (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_H_VISTA_total label=H_VISTA_total (With Dust) units=none description=H_VISTA_total (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_K_VISTA_bulge_d label=K_VISTA_bulge_d (With Dust) units=none description=K_VISTA_bulge_d (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_K_VISTA_bulge_m label=K_VISTA_bulge_m (With Dust) units=none description=K_VISTA_bulge_m (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_K_VISTA_bulge_t label=K_VISTA_bulge_t (With Dust) units=none description=K_VISTA_bulge_t (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_K_VISTA_disk label=K_VISTA_disk (With Dust) units=none description=K_VISTA_disk (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_K_VISTA_total label=K_VISTA_total (With Dust) units=none description=K_VISTA_total (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_W1_WISE_bulge_d label=W1_WISE_bulge_d (With Dust) units=none description=W1_WISE_bulge_d (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_W1_WISE_bulge_m label=W1_WISE_bulge_m (With Dust) units=none description=W1_WISE_bulge_m (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_W1_WISE_bulge_t label=W1_WISE_bulge_t (With Dust) units=none description=W1_WISE_bulge_t (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_W1_WISE_disk label=W1_WISE_disk (With Dust) units=none description=W1_WISE_disk (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_W1_WISE_total label=W1_WISE_total (With Dust) units=none description=W1_WISE_total (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_I1_Spitzer_bulge_d label=I1_Spitzer_bulge_d (With Dust) units=none description=I1_Spitzer_bulge_d (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_I1_Spitzer_bulge_m label=I1_Spitzer_bulge_m (With Dust) units=none description=I1_Spitzer_bulge_m (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_I1_Spitzer_bulge_t label=I1_Spitzer_bulge_t (With Dust) units=none description=I1_Spitzer_bulge_t (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_I1_Spitzer_disk label=I1_Spitzer_disk (With Dust) units=none description=I1_Spitzer_disk (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_I1_Spitzer_total label=I1_Spitzer_total (With Dust) units=none description=I1_Spitzer_total (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_I2_Spitzer_bulge_d label=I2_Spitzer_bulge_d (With Dust) units=none description=I2_Spitzer_bulge_d (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_I2_Spitzer_bulge_m label=I2_Spitzer_bulge_m (With Dust) units=none description=I2_Spitzer_bulge_m (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_I2_Spitzer_bulge_t label=I2_Spitzer_bulge_t (With Dust) units=none description=I2_Spitzer_bulge_t (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_I2_Spitzer_disk label=I2_Spitzer_disk (With Dust) units=none description=I2_Spitzer_disk (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_I2_Spitzer_total label=I2_Spitzer_total (With Dust) units=none description=I2_Spitzer_total (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_W2_WISE_bulge_d label=W2_WISE_bulge_d (With Dust) units=none description=W2_WISE_bulge_d (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_W2_WISE_bulge_m label=W2_WISE_bulge_m (With Dust) units=none description=W2_WISE_bulge_m (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_W2_WISE_bulge_t label=W2_WISE_bulge_t (With Dust) units=none description=W2_WISE_bulge_t (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_W2_WISE_disk label=W2_WISE_disk (With Dust) units=none description=W2_WISE_disk (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_W2_WISE_total label=W2_WISE_total (With Dust) units=none description=W2_WISE_total (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_I3_Spitzer_bulge_d label=I3_Spitzer_bulge_d (With Dust) units=none description=I3_Spitzer_bulge_d (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_I3_Spitzer_bulge_m label=I3_Spitzer_bulge_m (With Dust) units=none description=I3_Spitzer_bulge_m (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_I3_Spitzer_bulge_t label=I3_Spitzer_bulge_t (With Dust) units=none description=I3_Spitzer_bulge_t (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_I3_Spitzer_disk label=I3_Spitzer_disk (With Dust) units=none description=I3_Spitzer_disk (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_I3_Spitzer_total label=I3_Spitzer_total (With Dust) units=none description=I3_Spitzer_total (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_I4_Spitzer_bulge_d label=I4_Spitzer_bulge_d (With Dust) units=none description=I4_Spitzer_bulge_d (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_I4_Spitzer_bulge_m label=I4_Spitzer_bulge_m (With Dust) units=none description=I4_Spitzer_bulge_m (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_I4_Spitzer_bulge_t label=I4_Spitzer_bulge_t (With Dust) units=none description=I4_Spitzer_bulge_t (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_I4_Spitzer_disk label=I4_Spitzer_disk (With Dust) units=none description=I4_Spitzer_disk (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_I4_Spitzer_total label=I4_Spitzer_total (With Dust) units=none description=I4_Spitzer_total (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_W3_WISE_bulge_d label=W3_WISE_bulge_d (With Dust) units=none description=W3_WISE_bulge_d (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_W3_WISE_bulge_m label=W3_WISE_bulge_m (With Dust) units=none description=W3_WISE_bulge_m (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_W3_WISE_bulge_t label=W3_WISE_bulge_t (With Dust) units=none description=W3_WISE_bulge_t (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_W3_WISE_disk label=W3_WISE_disk (With Dust) units=none description=W3_WISE_disk (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_W3_WISE_total label=W3_WISE_total (With Dust) units=none description=W3_WISE_total (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_W4_WISE_bulge_d label=W4_WISE_bulge_d (With Dust) units=none description=W4_WISE_bulge_d (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_W4_WISE_bulge_m label=W4_WISE_bulge_m (With Dust) units=none description=W4_WISE_bulge_m (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_W4_WISE_bulge_t label=W4_WISE_bulge_t (With Dust) units=none description=W4_WISE_bulge_t (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_W4_WISE_disk label=W4_WISE_disk (With Dust) units=none description=W4_WISE_disk (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_W4_WISE_total label=W4_WISE_total (With Dust) units=none description=W4_WISE_total (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_P70_Herschel_bulge_d label=P70_Herschel_bulge_d (With Dust) units=none description=P70_Herschel_bulge_d (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_P70_Herschel_bulge_m label=P70_Herschel_bulge_m (With Dust) units=none description=P70_Herschel_bulge_m (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_P70_Herschel_bulge_t label=P70_Herschel_bulge_t (With Dust) units=none description=P70_Herschel_bulge_t (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_P70_Herschel_disk label=P70_Herschel_disk (With Dust) units=none description=P70_Herschel_disk (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_P70_Herschel_total label=P70_Herschel_total (With Dust) units=none description=P70_Herschel_total (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_P100_Herschel_bulge_d label=P100_Herschel_bulge_d (With Dust) units=none description=P100_Herschel_bulge_d (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_P100_Herschel_bulge_m label=P100_Herschel_bulge_m (With Dust) units=none description=P100_Herschel_bulge_m (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_P100_Herschel_bulge_t label=P100_Herschel_bulge_t (With Dust) units=none description=P100_Herschel_bulge_t (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_P100_Herschel_disk label=P100_Herschel_disk (With Dust) units=none description=P100_Herschel_disk (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_P100_Herschel_total label=P100_Herschel_total (With Dust) units=none description=P100_Herschel_total (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_P160_Herschel_bulge_d label=P160_Herschel_bulge_d (With Dust) units=none description=P160_Herschel_bulge_d (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_P160_Herschel_bulge_m label=P160_Herschel_bulge_m (With Dust) units=none description=P160_Herschel_bulge_m (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_P160_Herschel_bulge_t label=P160_Herschel_bulge_t (With Dust) units=none description=P160_Herschel_bulge_t (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_P160_Herschel_disk label=P160_Herschel_disk (With Dust) units=none description=P160_Herschel_disk (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_P160_Herschel_total label=P160_Herschel_total (With Dust) units=none description=P160_Herschel_total (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_S250_Herschel_bulge_d label=S250_Herschel_bulge_d (With Dust) units=none description=S250_Herschel_bulge_d (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_S250_Herschel_bulge_m label=S250_Herschel_bulge_m (With Dust) units=none description=S250_Herschel_bulge_m (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_S250_Herschel_bulge_t label=S250_Herschel_bulge_t (With Dust) units=none description=S250_Herschel_bulge_t (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_S250_Herschel_disk label=S250_Herschel_disk (With Dust) units=none description=S250_Herschel_disk (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_S250_Herschel_total label=S250_Herschel_total (With Dust) units=none description=S250_Herschel_total (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_S350_Herschel_bulge_d label=S350_Herschel_bulge_d (With Dust) units=none description=S350_Herschel_bulge_d (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_S350_Herschel_bulge_m label=S350_Herschel_bulge_m (With Dust) units=none description=S350_Herschel_bulge_m (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_S350_Herschel_bulge_t label=S350_Herschel_bulge_t (With Dust) units=none description=S350_Herschel_bulge_t (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_S350_Herschel_disk label=S350_Herschel_disk (With Dust) units=none description=S350_Herschel_disk (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_S350_Herschel_total label=S350_Herschel_total (With Dust) units=none description=S350_Herschel_total (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_S450_JCMT_bulge_d label=S450_JCMT_bulge_d (With Dust) units=none description=S450_JCMT_bulge_d (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_S450_JCMT_bulge_m label=S450_JCMT_bulge_m (With Dust) units=none description=S450_JCMT_bulge_m (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_S450_JCMT_bulge_t label=S450_JCMT_bulge_t (With Dust) units=none description=S450_JCMT_bulge_t (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_S450_JCMT_disk label=S450_JCMT_disk (With Dust) units=none description=S450_JCMT_disk (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_S450_JCMT_total label=S450_JCMT_total (With Dust) units=none description=S450_JCMT_total (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_S500_Herschel_bulge_d label=S500_Herschel_bulge_d (With Dust) units=none description=S500_Herschel_bulge_d (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_S500_Herschel_bulge_m label=S500_Herschel_bulge_m (With Dust) units=none description=S500_Herschel_bulge_m (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_S500_Herschel_bulge_t label=S500_Herschel_bulge_t (With Dust) units=none description=S500_Herschel_bulge_t (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_S500_Herschel_disk label=S500_Herschel_disk (With Dust) units=none description=S500_Herschel_disk (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_S500_Herschel_total label=S500_Herschel_total (With Dust) units=none description=S500_Herschel_total (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_S850_JCMT_bulge_d label=S850_JCMT_bulge_d (With Dust) units=none description=S850_JCMT_bulge_d (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_S850_JCMT_bulge_m label=S850_JCMT_bulge_m (With Dust) units=none description=S850_JCMT_bulge_m (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_S850_JCMT_bulge_t label=S850_JCMT_bulge_t (With Dust) units=none description=S850_JCMT_bulge_t (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_S850_JCMT_disk label=S850_JCMT_disk (With Dust) units=none description=S850_JCMT_disk (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_S850_JCMT_total label=S850_JCMT_total (With Dust) units=none description=S850_JCMT_total (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_Band9_ALMA_bulge_d label=Band9_ALMA_bulge_d (With Dust) units=none description=Band9_ALMA_bulge_d (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_Band9_ALMA_bulge_m label=Band9_ALMA_bulge_m (With Dust) units=none description=Band9_ALMA_bulge_m (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_Band9_ALMA_bulge_t label=Band9_ALMA_bulge_t (With Dust) units=none description=Band9_ALMA_bulge_t (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_Band9_ALMA_disk label=Band9_ALMA_disk (With Dust) units=none description=Band9_ALMA_disk (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_Band9_ALMA_total label=Band9_ALMA_total (With Dust) units=none description=Band9_ALMA_total (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_Band8_ALMA_bulge_d label=Band8_ALMA_bulge_d (With Dust) units=none description=Band8_ALMA_bulge_d (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_Band8_ALMA_bulge_m label=Band8_ALMA_bulge_m (With Dust) units=none description=Band8_ALMA_bulge_m (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_Band8_ALMA_bulge_t label=Band8_ALMA_bulge_t (With Dust) units=none description=Band8_ALMA_bulge_t (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_Band8_ALMA_disk label=Band8_ALMA_disk (With Dust) units=none description=Band8_ALMA_disk (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_Band8_ALMA_total label=Band8_ALMA_total (With Dust) units=none description=Band8_ALMA_total (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_Band7_ALMA_bulge_d label=Band7_ALMA_bulge_d (With Dust) units=none description=Band7_ALMA_bulge_d (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_Band7_ALMA_bulge_m label=Band7_ALMA_bulge_m (With Dust) units=none description=Band7_ALMA_bulge_m (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_Band7_ALMA_bulge_t label=Band7_ALMA_bulge_t (With Dust) units=none description=Band7_ALMA_bulge_t (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_Band7_ALMA_disk label=Band7_ALMA_disk (With Dust) units=none description=Band7_ALMA_disk (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_Band7_ALMA_total label=Band7_ALMA_total (With Dust) units=none description=Band7_ALMA_total (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_Band6_ALMA_bulge_d label=Band6_ALMA_bulge_d (With Dust) units=none description=Band6_ALMA_bulge_d (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_Band6_ALMA_bulge_m label=Band6_ALMA_bulge_m (With Dust) units=none description=Band6_ALMA_bulge_m (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_Band6_ALMA_bulge_t label=Band6_ALMA_bulge_t (With Dust) units=none description=Band6_ALMA_bulge_t (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_Band6_ALMA_disk label=Band6_ALMA_disk (With Dust) units=none description=Band6_ALMA_disk (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_Band6_ALMA_total label=Band6_ALMA_total (With Dust) units=none description=Band6_ALMA_total (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_Band5_ALMA_bulge_d label=Band5_ALMA_bulge_d (With Dust) units=none description=Band5_ALMA_bulge_d (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_Band5_ALMA_bulge_m label=Band5_ALMA_bulge_m (With Dust) units=none description=Band5_ALMA_bulge_m (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_Band5_ALMA_bulge_t label=Band5_ALMA_bulge_t (With Dust) units=none description=Band5_ALMA_bulge_t (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_Band5_ALMA_disk label=Band5_ALMA_disk (With Dust) units=none description=Band5_ALMA_disk (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_Band5_ALMA_total label=Band5_ALMA_total (With Dust) units=none description=Band5_ALMA_total (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_Band4_ALMA_bulge_d label=Band4_ALMA_bulge_d (With Dust) units=none description=Band4_ALMA_bulge_d (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_Band4_ALMA_bulge_m label=Band4_ALMA_bulge_m (With Dust) units=none description=Band4_ALMA_bulge_m (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_Band4_ALMA_bulge_t label=Band4_ALMA_bulge_t (With Dust) units=none description=Band4_ALMA_bulge_t (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_Band4_ALMA_disk label=Band4_ALMA_disk (With Dust) units=none description=Band4_ALMA_disk (With Dust) group=Galaxy/Halo Properties
-fieldname=dust_Band4_ALMA_total label=Band4_ALMA_total (With Dust) units=none description=Band4_ALMA_total (With Dust) group=Galaxy/Halo Properties
-fieldname=nodust_FUV_GALEX_bulge_d label=FUV_GALEX_bulge_d units=none description=FUV_GALEX_bulge_d group=Galaxy/Halo Properties
-fieldname=nodust_FUV_GALEX_bulge_m label=FUV_GALEX_bulge_m units=none description=FUV_GALEX_bulge_m group=Galaxy/Halo Properties
-fieldname=nodust_FUV_GALEX_bulge_t label=FUV_GALEX_bulge_t units=none description=FUV_GALEX_bulge_t group=Galaxy/Halo Properties
-fieldname=nodust_FUV_GALEX_disk label=FUV_GALEX_disk units=none description=FUV_GALEX_disk group=Galaxy/Halo Properties
-fieldname=nodust_FUV_GALEX_total label=FUV_GALEX_total units=none description=FUV_GALEX_total group=Galaxy/Halo Properties
-fieldname=nodust_NUV_GALEX_bulge_d label=NUV_GALEX_bulge_d units=none description=NUV_GALEX_bulge_d group=Galaxy/Halo Properties
-fieldname=nodust_NUV_GALEX_bulge_m label=NUV_GALEX_bulge_m units=none description=NUV_GALEX_bulge_m group=Galaxy/Halo Properties
-fieldname=nodust_NUV_GALEX_bulge_t label=NUV_GALEX_bulge_t units=none description=NUV_GALEX_bulge_t group=Galaxy/Halo Properties
-fieldname=nodust_NUV_GALEX_disk label=NUV_GALEX_disk units=none description=NUV_GALEX_disk group=Galaxy/Halo Properties
-fieldname=nodust_NUV_GALEX_total label=NUV_GALEX_total units=none description=NUV_GALEX_total group=Galaxy/Halo Properties
-fieldname=nodust_u_SDSS_bulge_d label=u_SDSS_bulge_d units=none description=u_SDSS_bulge_d group=Galaxy/Halo Properties
-fieldname=nodust_u_SDSS_bulge_m label=u_SDSS_bulge_m units=none description=u_SDSS_bulge_m group=Galaxy/Halo Properties
-fieldname=nodust_u_SDSS_bulge_t label=u_SDSS_bulge_t units=none description=u_SDSS_bulge_t group=Galaxy/Halo Properties
-fieldname=nodust_u_SDSS_disk label=u_SDSS_disk units=none description=u_SDSS_disk group=Galaxy/Halo Properties
-fieldname=nodust_u_SDSS_total label=u_SDSS_total units=none description=u_SDSS_total group=Galaxy/Halo Properties
-fieldname=nodust_g_SDSS_bulge_d label=g_SDSS_bulge_d units=none description=g_SDSS_bulge_d group=Galaxy/Halo Properties
-fieldname=nodust_g_SDSS_bulge_m label=g_SDSS_bulge_m units=none description=g_SDSS_bulge_m group=Galaxy/Halo Properties
-fieldname=nodust_g_SDSS_bulge_t label=g_SDSS_bulge_t units=none description=g_SDSS_bulge_t group=Galaxy/Halo Properties
-fieldname=nodust_g_SDSS_disk label=g_SDSS_disk units=none description=g_SDSS_disk group=Galaxy/Halo Properties
-fieldname=nodust_g_SDSS_total label=g_SDSS_total units=none description=g_SDSS_total group=Galaxy/Halo Properties
-fieldname=nodust_r_SDSS_bulge_d label=r_SDSS_bulge_d units=none description=r_SDSS_bulge_d group=Galaxy/Halo Properties
-fieldname=nodust_r_SDSS_bulge_m label=r_SDSS_bulge_m units=none description=r_SDSS_bulge_m group=Galaxy/Halo Properties
-fieldname=nodust_r_SDSS_bulge_t label=r_SDSS_bulge_t units=none description=r_SDSS_bulge_t group=Galaxy/Halo Properties
-fieldname=nodust_r_SDSS_disk label=r_SDSS_disk units=none description=r_SDSS_disk group=Galaxy/Halo Properties
-fieldname=nodust_r_SDSS_total label=r_SDSS_total units=none description=r_SDSS_total group=Galaxy/Halo Properties
-fieldname=nodust_i_SDSS_bulge_d label=i_SDSS_bulge_d units=none description=i_SDSS_bulge_d group=Galaxy/Halo Properties
-fieldname=nodust_i_SDSS_bulge_m label=i_SDSS_bulge_m units=none description=i_SDSS_bulge_m group=Galaxy/Halo Properties
-fieldname=nodust_i_SDSS_bulge_t label=i_SDSS_bulge_t units=none description=i_SDSS_bulge_t group=Galaxy/Halo Properties
-fieldname=nodust_i_SDSS_disk label=i_SDSS_disk units=none description=i_SDSS_disk group=Galaxy/Halo Properties
-fieldname=nodust_i_SDSS_total label=i_SDSS_total units=none description=i_SDSS_total group=Galaxy/Halo Properties
-fieldname=nodust_z_SDSS_bulge_d label=z_SDSS_bulge_d units=none description=z_SDSS_bulge_d group=Galaxy/Halo Properties
-fieldname=nodust_z_SDSS_bulge_m label=z_SDSS_bulge_m units=none description=z_SDSS_bulge_m group=Galaxy/Halo Properties
-fieldname=nodust_z_SDSS_bulge_t label=z_SDSS_bulge_t units=none description=z_SDSS_bulge_t group=Galaxy/Halo Properties
-fieldname=nodust_z_SDSS_disk label=z_SDSS_disk units=none description=z_SDSS_disk group=Galaxy/Halo Properties
-fieldname=nodust_z_SDSS_total label=z_SDSS_total units=none description=z_SDSS_total group=Galaxy/Halo Properties
-fieldname=nodust_Y_VISTA_bulge_d label=Y_VISTA_bulge_d units=none description=Y_VISTA_bulge_d group=Galaxy/Halo Properties
-fieldname=nodust_Y_VISTA_bulge_m label=Y_VISTA_bulge_m units=none description=Y_VISTA_bulge_m group=Galaxy/Halo Properties
-fieldname=nodust_Y_VISTA_bulge_t label=Y_VISTA_bulge_t units=none description=Y_VISTA_bulge_t group=Galaxy/Halo Properties
-fieldname=nodust_Y_VISTA_disk label=Y_VISTA_disk units=none description=Y_VISTA_disk group=Galaxy/Halo Properties
-fieldname=nodust_Y_VISTA_total label=Y_VISTA_total units=none description=Y_VISTA_total group=Galaxy/Halo Properties
-fieldname=nodust_J_VISTA_bulge_d label=J_VISTA_bulge_d units=none description=J_VISTA_bulge_d group=Galaxy/Halo Properties
-fieldname=nodust_J_VISTA_bulge_m label=J_VISTA_bulge_m units=none description=J_VISTA_bulge_m group=Galaxy/Halo Properties
-fieldname=nodust_J_VISTA_bulge_t label=J_VISTA_bulge_t units=none description=J_VISTA_bulge_t group=Galaxy/Halo Properties
-fieldname=nodust_J_VISTA_disk label=J_VISTA_disk units=none description=J_VISTA_disk group=Galaxy/Halo Properties
-fieldname=nodust_J_VISTA_total label=J_VISTA_total units=none description=J_VISTA_total group=Galaxy/Halo Properties
-fieldname=nodust_H_VISTA_bulge_d label=H_VISTA_bulge_d units=none description=H_VISTA_bulge_d group=Galaxy/Halo Properties
-fieldname=nodust_H_VISTA_bulge_m label=H_VISTA_bulge_m units=none description=H_VISTA_bulge_m group=Galaxy/Halo Properties
-fieldname=nodust_H_VISTA_bulge_t label=H_VISTA_bulge_t units=none description=H_VISTA_bulge_t group=Galaxy/Halo Properties
-fieldname=nodust_H_VISTA_disk label=H_VISTA_disk units=none description=H_VISTA_disk group=Galaxy/Halo Properties
-fieldname=nodust_H_VISTA_total label=H_VISTA_total units=none description=H_VISTA_total group=Galaxy/Halo Properties
-fieldname=nodust_K_VISTA_bulge_d label=K_VISTA_bulge_d units=none description=K_VISTA_bulge_d group=Galaxy/Halo Properties
-fieldname=nodust_K_VISTA_bulge_m label=K_VISTA_bulge_m units=none description=K_VISTA_bulge_m group=Galaxy/Halo Properties
-fieldname=nodust_K_VISTA_bulge_t label=K_VISTA_bulge_t units=none description=K_VISTA_bulge_t group=Galaxy/Halo Properties
-fieldname=nodust_K_VISTA_disk label=K_VISTA_disk units=none description=K_VISTA_disk group=Galaxy/Halo Properties
-fieldname=nodust_K_VISTA_total label=K_VISTA_total units=none description=K_VISTA_total group=Galaxy/Halo Properties
-fieldname=nodust_W1_WISE_bulge_d label=W1_WISE_bulge_d units=none description=W1_WISE_bulge_d group=Galaxy/Halo Properties
-fieldname=nodust_W1_WISE_bulge_m label=W1_WISE_bulge_m units=none description=W1_WISE_bulge_m group=Galaxy/Halo Properties
-fieldname=nodust_W1_WISE_bulge_t label=W1_WISE_bulge_t units=none description=W1_WISE_bulge_t group=Galaxy/Halo Properties
-fieldname=nodust_W1_WISE_disk label=W1_WISE_disk units=none description=W1_WISE_disk group=Galaxy/Halo Properties
-fieldname=nodust_W1_WISE_total label=W1_WISE_total units=none description=W1_WISE_total group=Galaxy/Halo Properties
-fieldname=nodust_I1_Spitzer_bulge_d label=I1_Spitzer_bulge_d units=none description=I1_Spitzer_bulge_d group=Galaxy/Halo Properties
-fieldname=nodust_I1_Spitzer_bulge_m label=I1_Spitzer_bulge_m units=none description=I1_Spitzer_bulge_m group=Galaxy/Halo Properties
-fieldname=nodust_I1_Spitzer_bulge_t label=I1_Spitzer_bulge_t units=none description=I1_Spitzer_bulge_t group=Galaxy/Halo Properties
-fieldname=nodust_I1_Spitzer_disk label=I1_Spitzer_disk units=none description=I1_Spitzer_disk group=Galaxy/Halo Properties
-fieldname=nodust_I1_Spitzer_total label=I1_Spitzer_total units=none description=I1_Spitzer_total group=Galaxy/Halo Properties
-fieldname=nodust_I2_Spitzer_bulge_d label=I2_Spitzer_bulge_d units=none description=I2_Spitzer_bulge_d group=Galaxy/Halo Properties
-fieldname=nodust_I2_Spitzer_bulge_m label=I2_Spitzer_bulge_m units=none description=I2_Spitzer_bulge_m group=Galaxy/Halo Properties
-fieldname=nodust_I2_Spitzer_bulge_t label=I2_Spitzer_bulge_t units=none description=I2_Spitzer_bulge_t group=Galaxy/Halo Properties
-fieldname=nodust_I2_Spitzer_disk label=I2_Spitzer_disk units=none description=I2_Spitzer_disk group=Galaxy/Halo Properties
-fieldname=nodust_I2_Spitzer_total label=I2_Spitzer_total units=none description=I2_Spitzer_total group=Galaxy/Halo Properties
-fieldname=nodust_W2_WISE_bulge_d label=W2_WISE_bulge_d units=none description=W2_WISE_bulge_d group=Galaxy/Halo Properties
-fieldname=nodust_W2_WISE_bulge_m label=W2_WISE_bulge_m units=none description=W2_WISE_bulge_m group=Galaxy/Halo Properties
-fieldname=nodust_W2_WISE_bulge_t label=W2_WISE_bulge_t units=none description=W2_WISE_bulge_t group=Galaxy/Halo Properties
-fieldname=nodust_W2_WISE_disk label=W2_WISE_disk units=none description=W2_WISE_disk group=Galaxy/Halo Properties
-fieldname=nodust_W2_WISE_total label=W2_WISE_total units=none description=W2_WISE_total group=Galaxy/Halo Properties
-fieldname=nodust_I3_Spitzer_bulge_d label=I3_Spitzer_bulge_d units=none description=I3_Spitzer_bulge_d group=Galaxy/Halo Properties
-fieldname=nodust_I3_Spitzer_bulge_m label=I3_Spitzer_bulge_m units=none description=I3_Spitzer_bulge_m group=Galaxy/Halo Properties
-fieldname=nodust_I3_Spitzer_bulge_t label=I3_Spitzer_bulge_t units=none description=I3_Spitzer_bulge_t group=Galaxy/Halo Properties
-fieldname=nodust_I3_Spitzer_disk label=I3_Spitzer_disk units=none description=I3_Spitzer_disk group=Galaxy/Halo Properties
-fieldname=nodust_I3_Spitzer_total label=I3_Spitzer_total units=none description=I3_Spitzer_total group=Galaxy/Halo Properties
-fieldname=nodust_I4_Spitzer_bulge_d label=I4_Spitzer_bulge_d units=none description=I4_Spitzer_bulge_d group=Galaxy/Halo Properties
-fieldname=nodust_I4_Spitzer_bulge_m label=I4_Spitzer_bulge_m units=none description=I4_Spitzer_bulge_m group=Galaxy/Halo Properties
-fieldname=nodust_I4_Spitzer_bulge_t label=I4_Spitzer_bulge_t units=none description=I4_Spitzer_bulge_t group=Galaxy/Halo Properties
-fieldname=nodust_I4_Spitzer_disk label=I4_Spitzer_disk units=none description=I4_Spitzer_disk group=Galaxy/Halo Properties
-fieldname=nodust_I4_Spitzer_total label=I4_Spitzer_total units=none description=I4_Spitzer_total group=Galaxy/Halo Properties
-fieldname=nodust_W3_WISE_bulge_d label=W3_WISE_bulge_d units=none description=W3_WISE_bulge_d group=Galaxy/Halo Properties
-fieldname=nodust_W3_WISE_bulge_m label=W3_WISE_bulge_m units=none description=W3_WISE_bulge_m group=Galaxy/Halo Properties
-fieldname=nodust_W3_WISE_bulge_t label=W3_WISE_bulge_t units=none description=W3_WISE_bulge_t group=Galaxy/Halo Properties
-fieldname=nodust_W3_WISE_disk label=W3_WISE_disk units=none description=W3_WISE_disk group=Galaxy/Halo Properties
-fieldname=nodust_W3_WISE_total label=W3_WISE_total units=none description=W3_WISE_total group=Galaxy/Halo Properties
-fieldname=nodust_W4_WISE_bulge_d label=W4_WISE_bulge_d units=none description=W4_WISE_bulge_d group=Galaxy/Halo Properties
-fieldname=nodust_W4_WISE_bulge_m label=W4_WISE_bulge_m units=none description=W4_WISE_bulge_m group=Galaxy/Halo Properties
-fieldname=nodust_W4_WISE_bulge_t label=W4_WISE_bulge_t units=none description=W4_WISE_bulge_t group=Galaxy/Halo Properties
-fieldname=nodust_W4_WISE_disk label=W4_WISE_disk units=none description=W4_WISE_disk group=Galaxy/Halo Properties
-fieldname=nodust_W4_WISE_total label=W4_WISE_total units=none description=W4_WISE_total group=Galaxy/Halo Properties
-fieldname=nodust_P70_Herschel_bulge_d label=P70_Herschel_bulge_d units=none description=P70_Herschel_bulge_d group=Galaxy/Halo Properties
-fieldname=nodust_P70_Herschel_bulge_m label=P70_Herschel_bulge_m units=none description=P70_Herschel_bulge_m group=Galaxy/Halo Properties
-fieldname=nodust_P70_Herschel_bulge_t label=P70_Herschel_bulge_t units=none description=P70_Herschel_bulge_t group=Galaxy/Halo Properties
-fieldname=nodust_P70_Herschel_disk label=P70_Herschel_disk units=none description=P70_Herschel_disk group=Galaxy/Halo Properties
-fieldname=nodust_P70_Herschel_total label=P70_Herschel_total units=none description=P70_Herschel_total group=Galaxy/Halo Properties
-fieldname=nodust_P100_Herschel_bulge_d label=P100_Herschel_bulge_d units=none description=P100_Herschel_bulge_d group=Galaxy/Halo Properties
-fieldname=nodust_P100_Herschel_bulge_m label=P100_Herschel_bulge_m units=none description=P100_Herschel_bulge_m group=Galaxy/Halo Properties
-fieldname=nodust_P100_Herschel_bulge_t label=P100_Herschel_bulge_t units=none description=P100_Herschel_bulge_t group=Galaxy/Halo Properties
-fieldname=nodust_P100_Herschel_disk label=P100_Herschel_disk units=none description=P100_Herschel_disk group=Galaxy/Halo Properties
-fieldname=nodust_P100_Herschel_total label=P100_Herschel_total units=none description=P100_Herschel_total group=Galaxy/Halo Properties
-fieldname=nodust_P160_Herschel_bulge_d label=P160_Herschel_bulge_d units=none description=P160_Herschel_bulge_d group=Galaxy/Halo Properties
-fieldname=nodust_P160_Herschel_bulge_m label=P160_Herschel_bulge_m units=none description=P160_Herschel_bulge_m group=Galaxy/Halo Properties
-fieldname=nodust_P160_Herschel_bulge_t label=P160_Herschel_bulge_t units=none description=P160_Herschel_bulge_t group=Galaxy/Halo Properties
-fieldname=nodust_P160_Herschel_disk label=P160_Herschel_disk units=none description=P160_Herschel_disk group=Galaxy/Halo Properties
-fieldname=nodust_P160_Herschel_total label=P160_Herschel_total units=none description=P160_Herschel_total group=Galaxy/Halo Properties
-fieldname=nodust_S250_Herschel_bulge_d label=S250_Herschel_bulge_d units=none description=S250_Herschel_bulge_d group=Galaxy/Halo Properties
-fieldname=nodust_S250_Herschel_bulge_m label=S250_Herschel_bulge_m units=none description=S250_Herschel_bulge_m group=Galaxy/Halo Properties
-fieldname=nodust_S250_Herschel_bulge_t label=S250_Herschel_bulge_t units=none description=S250_Herschel_bulge_t group=Galaxy/Halo Properties
-fieldname=nodust_S250_Herschel_disk label=S250_Herschel_disk units=none description=S250_Herschel_disk group=Galaxy/Halo Properties
-fieldname=nodust_S250_Herschel_total label=S250_Herschel_total units=none description=S250_Herschel_total group=Galaxy/Halo Properties
-fieldname=nodust_S350_Herschel_bulge_d label=S350_Herschel_bulge_d units=none description=S350_Herschel_bulge_d group=Galaxy/Halo Properties
-fieldname=nodust_S350_Herschel_bulge_m label=S350_Herschel_bulge_m units=none description=S350_Herschel_bulge_m group=Galaxy/Halo Properties
-fieldname=nodust_S350_Herschel_bulge_t label=S350_Herschel_bulge_t units=none description=S350_Herschel_bulge_t group=Galaxy/Halo Properties
-fieldname=nodust_S350_Herschel_disk label=S350_Herschel_disk units=none description=S350_Herschel_disk group=Galaxy/Halo Properties
-fieldname=nodust_S350_Herschel_total label=S350_Herschel_total units=none description=S350_Herschel_total group=Galaxy/Halo Properties
-fieldname=nodust_S450_JCMT_bulge_d label=S450_JCMT_bulge_d units=none description=S450_JCMT_bulge_d group=Galaxy/Halo Properties
-fieldname=nodust_S450_JCMT_bulge_m label=S450_JCMT_bulge_m units=none description=S450_JCMT_bulge_m group=Galaxy/Halo Properties
-fieldname=nodust_S450_JCMT_bulge_t label=S450_JCMT_bulge_t units=none description=S450_JCMT_bulge_t group=Galaxy/Halo Properties
-fieldname=nodust_S450_JCMT_disk label=S450_JCMT_disk units=none description=S450_JCMT_disk group=Galaxy/Halo Properties
-fieldname=nodust_S450_JCMT_total label=S450_JCMT_total units=none description=S450_JCMT_total group=Galaxy/Halo Properties
-fieldname=nodust_S500_Herschel_bulge_d label=S500_Herschel_bulge_d units=none description=S500_Herschel_bulge_d group=Galaxy/Halo Properties
-fieldname=nodust_S500_Herschel_bulge_m label=S500_Herschel_bulge_m units=none description=S500_Herschel_bulge_m group=Galaxy/Halo Properties
-fieldname=nodust_S500_Herschel_bulge_t label=S500_Herschel_bulge_t units=none description=S500_Herschel_bulge_t group=Galaxy/Halo Properties
-fieldname=nodust_S500_Herschel_disk label=S500_Herschel_disk units=none description=S500_Herschel_disk group=Galaxy/Halo Properties
-fieldname=nodust_S500_Herschel_total label=S500_Herschel_total units=none description=S500_Herschel_total group=Galaxy/Halo Properties
-fieldname=nodust_S850_JCMT_bulge_d label=S850_JCMT_bulge_d units=none description=S850_JCMT_bulge_d group=Galaxy/Halo Properties
-fieldname=nodust_S850_JCMT_bulge_m label=S850_JCMT_bulge_m units=none description=S850_JCMT_bulge_m group=Galaxy/Halo Properties
-fieldname=nodust_S850_JCMT_bulge_t label=S850_JCMT_bulge_t units=none description=S850_JCMT_bulge_t group=Galaxy/Halo Properties
-fieldname=nodust_S850_JCMT_disk label=S850_JCMT_disk units=none description=S850_JCMT_disk group=Galaxy/Halo Properties
-fieldname=nodust_S850_JCMT_total label=S850_JCMT_total units=none description=S850_JCMT_total group=Galaxy/Halo Properties
-fieldname=nodust_Band9_ALMA_bulge_d label=Band9_ALMA_bulge_d units=none description=Band9_ALMA_bulge_d group=Galaxy/Halo Properties
-fieldname=nodust_Band9_ALMA_bulge_m label=Band9_ALMA_bulge_m units=none description=Band9_ALMA_bulge_m group=Galaxy/Halo Properties
-fieldname=nodust_Band9_ALMA_bulge_t label=Band9_ALMA_bulge_t units=none description=Band9_ALMA_bulge_t group=Galaxy/Halo Properties
-fieldname=nodust_Band9_ALMA_disk label=Band9_ALMA_disk units=none description=Band9_ALMA_disk group=Galaxy/Halo Properties
-fieldname=nodust_Band9_ALMA_total label=Band9_ALMA_total units=none description=Band9_ALMA_total group=Galaxy/Halo Properties
-fieldname=nodust_Band8_ALMA_bulge_d label=Band8_ALMA_bulge_d units=none description=Band8_ALMA_bulge_d group=Galaxy/Halo Properties
-fieldname=nodust_Band8_ALMA_bulge_m label=Band8_ALMA_bulge_m units=none description=Band8_ALMA_bulge_m group=Galaxy/Halo Properties
-fieldname=nodust_Band8_ALMA_bulge_t label=Band8_ALMA_bulge_t units=none description=Band8_ALMA_bulge_t group=Galaxy/Halo Properties
-fieldname=nodust_Band8_ALMA_disk label=Band8_ALMA_disk units=none description=Band8_ALMA_disk group=Galaxy/Halo Properties
-fieldname=nodust_Band8_ALMA_total label=Band8_ALMA_total units=none description=Band8_ALMA_total group=Galaxy/Halo Properties
-fieldname=nodust_Band7_ALMA_bulge_d label=Band7_ALMA_bulge_d units=none description=Band7_ALMA_bulge_d group=Galaxy/Halo Properties
-fieldname=nodust_Band7_ALMA_bulge_m label=Band7_ALMA_bulge_m units=none description=Band7_ALMA_bulge_m group=Galaxy/Halo Properties
-fieldname=nodust_Band7_ALMA_bulge_t label=Band7_ALMA_bulge_t units=none description=Band7_ALMA_bulge_t group=Galaxy/Halo Properties
-fieldname=nodust_Band7_ALMA_disk label=Band7_ALMA_disk units=none description=Band7_ALMA_disk group=Galaxy/Halo Properties
-fieldname=nodust_Band7_ALMA_total label=Band7_ALMA_total units=none description=Band7_ALMA_total group=Galaxy/Halo Properties
-fieldname=nodust_Band6_ALMA_bulge_d label=Band6_ALMA_bulge_d units=none description=Band6_ALMA_bulge_d group=Galaxy/Halo Properties
-fieldname=nodust_Band6_ALMA_bulge_m label=Band6_ALMA_bulge_m units=none description=Band6_ALMA_bulge_m group=Galaxy/Halo Properties
-fieldname=nodust_Band6_ALMA_bulge_t label=Band6_ALMA_bulge_t units=none description=Band6_ALMA_bulge_t group=Galaxy/Halo Properties
-fieldname=nodust_Band6_ALMA_disk label=Band6_ALMA_disk units=none description=Band6_ALMA_disk group=Galaxy/Halo Properties
-fieldname=nodust_Band6_ALMA_total label=Band6_ALMA_total units=none description=Band6_ALMA_total group=Galaxy/Halo Properties
-fieldname=nodust_Band5_ALMA_bulge_d label=Band5_ALMA_bulge_d units=none description=Band5_ALMA_bulge_d group=Galaxy/Halo Properties
-fieldname=nodust_Band5_ALMA_bulge_m label=Band5_ALMA_bulge_m units=none description=Band5_ALMA_bulge_m group=Galaxy/Halo Properties
-fieldname=nodust_Band5_ALMA_bulge_t label=Band5_ALMA_bulge_t units=none description=Band5_ALMA_bulge_t group=Galaxy/Halo Properties
-fieldname=nodust_Band5_ALMA_disk label=Band5_ALMA_disk units=none description=Band5_ALMA_disk group=Galaxy/Halo Properties
-fieldname=nodust_Band5_ALMA_total label=Band5_ALMA_total units=none description=Band5_ALMA_total group=Galaxy/Halo Properties
-fieldname=nodust_Band4_ALMA_bulge_d label=Band4_ALMA_bulge_d units=none description=Band4_ALMA_bulge_d group=Galaxy/Halo Properties
-fieldname=nodust_Band4_ALMA_bulge_m label=Band4_ALMA_bulge_m units=none description=Band4_ALMA_bulge_m group=Galaxy/Halo Properties
-fieldname=nodust_Band4_ALMA_bulge_t label=Band4_ALMA_bulge_t units=none description=Band4_ALMA_bulge_t group=Galaxy/Halo Properties
-fieldname=nodust_Band4_ALMA_disk label=Band4_ALMA_disk units=none description=Band4_ALMA_disk group=Galaxy/Halo Properties
-fieldname=nodust_Band4_ALMA_total label=Band4_ALMA_total units=none description=Band4_ALMA_total group=Galaxy/Halo Properties
+fieldname=dust_FUV_GALEX_bulge_d label=FUV_GALEX_bulge_d units=none description=FUV_GALEX_bulge_d group=Galaxy/Halo Properties
+fieldname=dust_FUV_GALEX_bulge_m label=FUV_GALEX_bulge_m units=none description=FUV_GALEX_bulge_m group=Galaxy/Halo Properties
+fieldname=dust_FUV_GALEX_bulge_t label=FUV_GALEX_bulge_t units=none description=FUV_GALEX_bulge_t group=Galaxy/Halo Properties
+fieldname=dust_FUV_GALEX_disk label=FUV_GALEX_disk units=none description=FUV_GALEX_disk group=Galaxy/Halo Properties
+fieldname=dust_FUV_GALEX_total label=FUV_GALEX_total units=none description=FUV_GALEX_total group=Galaxy/Halo Properties
+fieldname=dust_NUV_GALEX_bulge_d label=NUV_GALEX_bulge_d units=none description=NUV_GALEX_bulge_d group=Galaxy/Halo Properties
+fieldname=dust_NUV_GALEX_bulge_m label=NUV_GALEX_bulge_m units=none description=NUV_GALEX_bulge_m group=Galaxy/Halo Properties
+fieldname=dust_NUV_GALEX_bulge_t label=NUV_GALEX_bulge_t units=none description=NUV_GALEX_bulge_t group=Galaxy/Halo Properties
+fieldname=dust_NUV_GALEX_disk label=NUV_GALEX_disk units=none description=NUV_GALEX_disk group=Galaxy/Halo Properties
+fieldname=dust_NUV_GALEX_total label=NUV_GALEX_total units=none description=NUV_GALEX_total group=Galaxy/Halo Properties
+fieldname=dust_u_SDSS_bulge_d label=u_SDSS_bulge_d units=none description=u_SDSS_bulge_d group=Galaxy/Halo Properties
+fieldname=dust_u_SDSS_bulge_m label=u_SDSS_bulge_m units=none description=u_SDSS_bulge_m group=Galaxy/Halo Properties
+fieldname=dust_u_SDSS_bulge_t label=u_SDSS_bulge_t units=none description=u_SDSS_bulge_t group=Galaxy/Halo Properties
+fieldname=dust_u_SDSS_disk label=u_SDSS_disk units=none description=u_SDSS_disk group=Galaxy/Halo Properties
+fieldname=dust_u_SDSS_total label=u_SDSS_total units=none description=u_SDSS_total group=Galaxy/Halo Properties
+fieldname=dust_g_SDSS_bulge_d label=g_SDSS_bulge_d units=none description=g_SDSS_bulge_d group=Galaxy/Halo Properties
+fieldname=dust_g_SDSS_bulge_m label=g_SDSS_bulge_m units=none description=g_SDSS_bulge_m group=Galaxy/Halo Properties
+fieldname=dust_g_SDSS_bulge_t label=g_SDSS_bulge_t units=none description=g_SDSS_bulge_t group=Galaxy/Halo Properties
+fieldname=dust_g_SDSS_disk label=g_SDSS_disk units=none description=g_SDSS_disk group=Galaxy/Halo Properties
+fieldname=dust_g_SDSS_total label=g_SDSS_total units=none description=g_SDSS_total group=Galaxy/Halo Properties
+fieldname=dust_r_SDSS_bulge_d label=r_SDSS_bulge_d units=none description=r_SDSS_bulge_d group=Galaxy/Halo Properties
+fieldname=dust_r_SDSS_bulge_m label=r_SDSS_bulge_m units=none description=r_SDSS_bulge_m group=Galaxy/Halo Properties
+fieldname=dust_r_SDSS_bulge_t label=r_SDSS_bulge_t units=none description=r_SDSS_bulge_t group=Galaxy/Halo Properties
+fieldname=dust_r_SDSS_disk label=r_SDSS_disk units=none description=r_SDSS_disk group=Galaxy/Halo Properties
+fieldname=dust_r_SDSS_total label=r_SDSS_total units=none description=r_SDSS_total group=Galaxy/Halo Properties
+fieldname=dust_i_SDSS_bulge_d label=i_SDSS_bulge_d units=none description=i_SDSS_bulge_d group=Galaxy/Halo Properties
+fieldname=dust_i_SDSS_bulge_m label=i_SDSS_bulge_m units=none description=i_SDSS_bulge_m group=Galaxy/Halo Properties
+fieldname=dust_i_SDSS_bulge_t label=i_SDSS_bulge_t units=none description=i_SDSS_bulge_t group=Galaxy/Halo Properties
+fieldname=dust_i_SDSS_disk label=i_SDSS_disk units=none description=i_SDSS_disk group=Galaxy/Halo Properties
+fieldname=dust_i_SDSS_total label=i_SDSS_total units=none description=i_SDSS_total group=Galaxy/Halo Properties
+fieldname=dust_z_SDSS_bulge_d label=z_SDSS_bulge_d units=none description=z_SDSS_bulge_d group=Galaxy/Halo Properties
+fieldname=dust_z_SDSS_bulge_m label=z_SDSS_bulge_m units=none description=z_SDSS_bulge_m group=Galaxy/Halo Properties
+fieldname=dust_z_SDSS_bulge_t label=z_SDSS_bulge_t units=none description=z_SDSS_bulge_t group=Galaxy/Halo Properties
+fieldname=dust_z_SDSS_disk label=z_SDSS_disk units=none description=z_SDSS_disk group=Galaxy/Halo Properties
+fieldname=dust_z_SDSS_total label=z_SDSS_total units=none description=z_SDSS_total group=Galaxy/Halo Properties
+fieldname=dust_Y_VISTA_bulge_d label=Y_VISTA_bulge_d units=none description=Y_VISTA_bulge_d group=Galaxy/Halo Properties
+fieldname=dust_Y_VISTA_bulge_m label=Y_VISTA_bulge_m units=none description=Y_VISTA_bulge_m group=Galaxy/Halo Properties
+fieldname=dust_Y_VISTA_bulge_t label=Y_VISTA_bulge_t units=none description=Y_VISTA_bulge_t group=Galaxy/Halo Properties
+fieldname=dust_Y_VISTA_disk label=Y_VISTA_disk units=none description=Y_VISTA_disk group=Galaxy/Halo Properties
+fieldname=dust_Y_VISTA_total label=Y_VISTA_total units=none description=Y_VISTA_total group=Galaxy/Halo Properties
+fieldname=dust_J_VISTA_bulge_d label=J_VISTA_bulge_d units=none description=J_VISTA_bulge_d group=Galaxy/Halo Properties
+fieldname=dust_J_VISTA_bulge_m label=J_VISTA_bulge_m units=none description=J_VISTA_bulge_m group=Galaxy/Halo Properties
+fieldname=dust_J_VISTA_bulge_t label=J_VISTA_bulge_t units=none description=J_VISTA_bulge_t group=Galaxy/Halo Properties
+fieldname=dust_J_VISTA_disk label=J_VISTA_disk units=none description=J_VISTA_disk group=Galaxy/Halo Properties
+fieldname=dust_J_VISTA_total label=J_VISTA_total units=none description=J_VISTA_total group=Galaxy/Halo Properties
+fieldname=dust_H_VISTA_bulge_d label=H_VISTA_bulge_d units=none description=H_VISTA_bulge_d group=Galaxy/Halo Properties
+fieldname=dust_H_VISTA_bulge_m label=H_VISTA_bulge_m units=none description=H_VISTA_bulge_m group=Galaxy/Halo Properties
+fieldname=dust_H_VISTA_bulge_t label=H_VISTA_bulge_t units=none description=H_VISTA_bulge_t group=Galaxy/Halo Properties
+fieldname=dust_H_VISTA_disk label=H_VISTA_disk units=none description=H_VISTA_disk group=Galaxy/Halo Properties
+fieldname=dust_H_VISTA_total label=H_VISTA_total units=none description=H_VISTA_total group=Galaxy/Halo Properties
+fieldname=dust_K_VISTA_bulge_d label=K_VISTA_bulge_d units=none description=K_VISTA_bulge_d group=Galaxy/Halo Properties
+fieldname=dust_K_VISTA_bulge_m label=K_VISTA_bulge_m units=none description=K_VISTA_bulge_m group=Galaxy/Halo Properties
+fieldname=dust_K_VISTA_bulge_t label=K_VISTA_bulge_t units=none description=K_VISTA_bulge_t group=Galaxy/Halo Properties
+fieldname=dust_K_VISTA_disk label=K_VISTA_disk units=none description=K_VISTA_disk group=Galaxy/Halo Properties
+fieldname=dust_K_VISTA_total label=K_VISTA_total units=none description=K_VISTA_total group=Galaxy/Halo Properties
+fieldname=dust_W1_WISE_bulge_d label=W1_WISE_bulge_d units=none description=W1_WISE_bulge_d group=Galaxy/Halo Properties
+fieldname=dust_W1_WISE_bulge_m label=W1_WISE_bulge_m units=none description=W1_WISE_bulge_m group=Galaxy/Halo Properties
+fieldname=dust_W1_WISE_bulge_t label=W1_WISE_bulge_t units=none description=W1_WISE_bulge_t group=Galaxy/Halo Properties
+fieldname=dust_W1_WISE_disk label=W1_WISE_disk units=none description=W1_WISE_disk group=Galaxy/Halo Properties
+fieldname=dust_W1_WISE_total label=W1_WISE_total units=none description=W1_WISE_total group=Galaxy/Halo Properties
+fieldname=dust_I1_Spitzer_bulge_d label=I1_Spitzer_bulge_d units=none description=I1_Spitzer_bulge_d group=Galaxy/Halo Properties
+fieldname=dust_I1_Spitzer_bulge_m label=I1_Spitzer_bulge_m units=none description=I1_Spitzer_bulge_m group=Galaxy/Halo Properties
+fieldname=dust_I1_Spitzer_bulge_t label=I1_Spitzer_bulge_t units=none description=I1_Spitzer_bulge_t group=Galaxy/Halo Properties
+fieldname=dust_I1_Spitzer_disk label=I1_Spitzer_disk units=none description=I1_Spitzer_disk group=Galaxy/Halo Properties
+fieldname=dust_I1_Spitzer_total label=I1_Spitzer_total units=none description=I1_Spitzer_total group=Galaxy/Halo Properties
+fieldname=dust_I2_Spitzer_bulge_d label=I2_Spitzer_bulge_d units=none description=I2_Spitzer_bulge_d group=Galaxy/Halo Properties
+fieldname=dust_I2_Spitzer_bulge_m label=I2_Spitzer_bulge_m units=none description=I2_Spitzer_bulge_m group=Galaxy/Halo Properties
+fieldname=dust_I2_Spitzer_bulge_t label=I2_Spitzer_bulge_t units=none description=I2_Spitzer_bulge_t group=Galaxy/Halo Properties
+fieldname=dust_I2_Spitzer_disk label=I2_Spitzer_disk units=none description=I2_Spitzer_disk group=Galaxy/Halo Properties
+fieldname=dust_I2_Spitzer_total label=I2_Spitzer_total units=none description=I2_Spitzer_total group=Galaxy/Halo Properties
+fieldname=dust_W2_WISE_bulge_d label=W2_WISE_bulge_d units=none description=W2_WISE_bulge_d group=Galaxy/Halo Properties
+fieldname=dust_W2_WISE_bulge_m label=W2_WISE_bulge_m units=none description=W2_WISE_bulge_m group=Galaxy/Halo Properties
+fieldname=dust_W2_WISE_bulge_t label=W2_WISE_bulge_t units=none description=W2_WISE_bulge_t group=Galaxy/Halo Properties
+fieldname=dust_W2_WISE_disk label=W2_WISE_disk units=none description=W2_WISE_disk group=Galaxy/Halo Properties
+fieldname=dust_W2_WISE_total label=W2_WISE_total units=none description=W2_WISE_total group=Galaxy/Halo Properties
+fieldname=dust_I3_Spitzer_bulge_d label=I3_Spitzer_bulge_d units=none description=I3_Spitzer_bulge_d group=Galaxy/Halo Properties
+fieldname=dust_I3_Spitzer_bulge_m label=I3_Spitzer_bulge_m units=none description=I3_Spitzer_bulge_m group=Galaxy/Halo Properties
+fieldname=dust_I3_Spitzer_bulge_t label=I3_Spitzer_bulge_t units=none description=I3_Spitzer_bulge_t group=Galaxy/Halo Properties
+fieldname=dust_I3_Spitzer_disk label=I3_Spitzer_disk units=none description=I3_Spitzer_disk group=Galaxy/Halo Properties
+fieldname=dust_I3_Spitzer_total label=I3_Spitzer_total units=none description=I3_Spitzer_total group=Galaxy/Halo Properties
+fieldname=dust_I4_Spitzer_bulge_d label=I4_Spitzer_bulge_d units=none description=I4_Spitzer_bulge_d group=Galaxy/Halo Properties
+fieldname=dust_I4_Spitzer_bulge_m label=I4_Spitzer_bulge_m units=none description=I4_Spitzer_bulge_m group=Galaxy/Halo Properties
+fieldname=dust_I4_Spitzer_bulge_t label=I4_Spitzer_bulge_t units=none description=I4_Spitzer_bulge_t group=Galaxy/Halo Properties
+fieldname=dust_I4_Spitzer_disk label=I4_Spitzer_disk units=none description=I4_Spitzer_disk group=Galaxy/Halo Properties
+fieldname=dust_I4_Spitzer_total label=I4_Spitzer_total units=none description=I4_Spitzer_total group=Galaxy/Halo Properties
+fieldname=dust_W3_WISE_bulge_d label=W3_WISE_bulge_d units=none description=W3_WISE_bulge_d group=Galaxy/Halo Properties
+fieldname=dust_W3_WISE_bulge_m label=W3_WISE_bulge_m units=none description=W3_WISE_bulge_m group=Galaxy/Halo Properties
+fieldname=dust_W3_WISE_bulge_t label=W3_WISE_bulge_t units=none description=W3_WISE_bulge_t group=Galaxy/Halo Properties
+fieldname=dust_W3_WISE_disk label=W3_WISE_disk units=none description=W3_WISE_disk group=Galaxy/Halo Properties
+fieldname=dust_W3_WISE_total label=W3_WISE_total units=none description=W3_WISE_total group=Galaxy/Halo Properties
+fieldname=dust_W4_WISE_bulge_d label=W4_WISE_bulge_d units=none description=W4_WISE_bulge_d group=Galaxy/Halo Properties
+fieldname=dust_W4_WISE_bulge_m label=W4_WISE_bulge_m units=none description=W4_WISE_bulge_m group=Galaxy/Halo Properties
+fieldname=dust_W4_WISE_bulge_t label=W4_WISE_bulge_t units=none description=W4_WISE_bulge_t group=Galaxy/Halo Properties
+fieldname=dust_W4_WISE_disk label=W4_WISE_disk units=none description=W4_WISE_disk group=Galaxy/Halo Properties
+fieldname=dust_W4_WISE_total label=W4_WISE_total units=none description=W4_WISE_total group=Galaxy/Halo Properties
+fieldname=dust_P70_Herschel_bulge_d label=P70_Herschel_bulge_d units=none description=P70_Herschel_bulge_d group=Galaxy/Halo Properties
+fieldname=dust_P70_Herschel_bulge_m label=P70_Herschel_bulge_m units=none description=P70_Herschel_bulge_m group=Galaxy/Halo Properties
+fieldname=dust_P70_Herschel_bulge_t label=P70_Herschel_bulge_t units=none description=P70_Herschel_bulge_t group=Galaxy/Halo Properties
+fieldname=dust_P70_Herschel_disk label=P70_Herschel_disk units=none description=P70_Herschel_disk group=Galaxy/Halo Properties
+fieldname=dust_P70_Herschel_total label=P70_Herschel_total units=none description=P70_Herschel_total group=Galaxy/Halo Properties
+fieldname=dust_P100_Herschel_bulge_d label=P100_Herschel_bulge_d units=none description=P100_Herschel_bulge_d group=Galaxy/Halo Properties
+fieldname=dust_P100_Herschel_bulge_m label=P100_Herschel_bulge_m units=none description=P100_Herschel_bulge_m group=Galaxy/Halo Properties
+fieldname=dust_P100_Herschel_bulge_t label=P100_Herschel_bulge_t units=none description=P100_Herschel_bulge_t group=Galaxy/Halo Properties
+fieldname=dust_P100_Herschel_disk label=P100_Herschel_disk units=none description=P100_Herschel_disk group=Galaxy/Halo Properties
+fieldname=dust_P100_Herschel_total label=P100_Herschel_total units=none description=P100_Herschel_total group=Galaxy/Halo Properties
+fieldname=dust_P160_Herschel_bulge_d label=P160_Herschel_bulge_d units=none description=P160_Herschel_bulge_d group=Galaxy/Halo Properties
+fieldname=dust_P160_Herschel_bulge_m label=P160_Herschel_bulge_m units=none description=P160_Herschel_bulge_m group=Galaxy/Halo Properties
+fieldname=dust_P160_Herschel_bulge_t label=P160_Herschel_bulge_t units=none description=P160_Herschel_bulge_t group=Galaxy/Halo Properties
+fieldname=dust_P160_Herschel_disk label=P160_Herschel_disk units=none description=P160_Herschel_disk group=Galaxy/Halo Properties
+fieldname=dust_P160_Herschel_total label=P160_Herschel_total units=none description=P160_Herschel_total group=Galaxy/Halo Properties
+fieldname=dust_S250_Herschel_bulge_d label=S250_Herschel_bulge_d units=none description=S250_Herschel_bulge_d group=Galaxy/Halo Properties
+fieldname=dust_S250_Herschel_bulge_m label=S250_Herschel_bulge_m units=none description=S250_Herschel_bulge_m group=Galaxy/Halo Properties
+fieldname=dust_S250_Herschel_bulge_t label=S250_Herschel_bulge_t units=none description=S250_Herschel_bulge_t group=Galaxy/Halo Properties
+fieldname=dust_S250_Herschel_disk label=S250_Herschel_disk units=none description=S250_Herschel_disk group=Galaxy/Halo Properties
+fieldname=dust_S250_Herschel_total label=S250_Herschel_total units=none description=S250_Herschel_total group=Galaxy/Halo Properties
+fieldname=dust_S350_Herschel_bulge_d label=S350_Herschel_bulge_d units=none description=S350_Herschel_bulge_d group=Galaxy/Halo Properties
+fieldname=dust_S350_Herschel_bulge_m label=S350_Herschel_bulge_m units=none description=S350_Herschel_bulge_m group=Galaxy/Halo Properties
+fieldname=dust_S350_Herschel_bulge_t label=S350_Herschel_bulge_t units=none description=S350_Herschel_bulge_t group=Galaxy/Halo Properties
+fieldname=dust_S350_Herschel_disk label=S350_Herschel_disk units=none description=S350_Herschel_disk group=Galaxy/Halo Properties
+fieldname=dust_S350_Herschel_total label=S350_Herschel_total units=none description=S350_Herschel_total group=Galaxy/Halo Properties
+fieldname=dust_S450_JCMT_bulge_d label=S450_JCMT_bulge_d units=none description=S450_JCMT_bulge_d group=Galaxy/Halo Properties
+fieldname=dust_S450_JCMT_bulge_m label=S450_JCMT_bulge_m units=none description=S450_JCMT_bulge_m group=Galaxy/Halo Properties
+fieldname=dust_S450_JCMT_bulge_t label=S450_JCMT_bulge_t units=none description=S450_JCMT_bulge_t group=Galaxy/Halo Properties
+fieldname=dust_S450_JCMT_disk label=S450_JCMT_disk units=none description=S450_JCMT_disk group=Galaxy/Halo Properties
+fieldname=dust_S450_JCMT_total label=S450_JCMT_total units=none description=S450_JCMT_total group=Galaxy/Halo Properties
+fieldname=dust_S500_Herschel_bulge_d label=S500_Herschel_bulge_d units=none description=S500_Herschel_bulge_d group=Galaxy/Halo Properties
+fieldname=dust_S500_Herschel_bulge_m label=S500_Herschel_bulge_m units=none description=S500_Herschel_bulge_m group=Galaxy/Halo Properties
+fieldname=dust_S500_Herschel_bulge_t label=S500_Herschel_bulge_t units=none description=S500_Herschel_bulge_t group=Galaxy/Halo Properties
+fieldname=dust_S500_Herschel_disk label=S500_Herschel_disk units=none description=S500_Herschel_disk group=Galaxy/Halo Properties
+fieldname=dust_S500_Herschel_total label=S500_Herschel_total units=none description=S500_Herschel_total group=Galaxy/Halo Properties
+fieldname=dust_S850_JCMT_bulge_d label=S850_JCMT_bulge_d units=none description=S850_JCMT_bulge_d group=Galaxy/Halo Properties
+fieldname=dust_S850_JCMT_bulge_m label=S850_JCMT_bulge_m units=none description=S850_JCMT_bulge_m group=Galaxy/Halo Properties
+fieldname=dust_S850_JCMT_bulge_t label=S850_JCMT_bulge_t units=none description=S850_JCMT_bulge_t group=Galaxy/Halo Properties
+fieldname=dust_S850_JCMT_disk label=S850_JCMT_disk units=none description=S850_JCMT_disk group=Galaxy/Halo Properties
+fieldname=dust_S850_JCMT_total label=S850_JCMT_total units=none description=S850_JCMT_total group=Galaxy/Halo Properties
+fieldname=dust_Band9_ALMA_bulge_d label=Band9_ALMA_bulge_d units=none description=Band9_ALMA_bulge_d group=Galaxy/Halo Properties
+fieldname=dust_Band9_ALMA_bulge_m label=Band9_ALMA_bulge_m units=none description=Band9_ALMA_bulge_m group=Galaxy/Halo Properties
+fieldname=dust_Band9_ALMA_bulge_t label=Band9_ALMA_bulge_t units=none description=Band9_ALMA_bulge_t group=Galaxy/Halo Properties
+fieldname=dust_Band9_ALMA_disk label=Band9_ALMA_disk units=none description=Band9_ALMA_disk group=Galaxy/Halo Properties
+fieldname=dust_Band9_ALMA_total label=Band9_ALMA_total units=none description=Band9_ALMA_total group=Galaxy/Halo Properties
+fieldname=dust_Band8_ALMA_bulge_d label=Band8_ALMA_bulge_d units=none description=Band8_ALMA_bulge_d group=Galaxy/Halo Properties
+fieldname=dust_Band8_ALMA_bulge_m label=Band8_ALMA_bulge_m units=none description=Band8_ALMA_bulge_m group=Galaxy/Halo Properties
+fieldname=dust_Band8_ALMA_bulge_t label=Band8_ALMA_bulge_t units=none description=Band8_ALMA_bulge_t group=Galaxy/Halo Properties
+fieldname=dust_Band8_ALMA_disk label=Band8_ALMA_disk units=none description=Band8_ALMA_disk group=Galaxy/Halo Properties
+fieldname=dust_Band8_ALMA_total label=Band8_ALMA_total units=none description=Band8_ALMA_total group=Galaxy/Halo Properties
+fieldname=dust_Band7_ALMA_bulge_d label=Band7_ALMA_bulge_d units=none description=Band7_ALMA_bulge_d group=Galaxy/Halo Properties
+fieldname=dust_Band7_ALMA_bulge_m label=Band7_ALMA_bulge_m units=none description=Band7_ALMA_bulge_m group=Galaxy/Halo Properties
+fieldname=dust_Band7_ALMA_bulge_t label=Band7_ALMA_bulge_t units=none description=Band7_ALMA_bulge_t group=Galaxy/Halo Properties
+fieldname=dust_Band7_ALMA_disk label=Band7_ALMA_disk units=none description=Band7_ALMA_disk group=Galaxy/Halo Properties
+fieldname=dust_Band7_ALMA_total label=Band7_ALMA_total units=none description=Band7_ALMA_total group=Galaxy/Halo Properties
+fieldname=dust_Band6_ALMA_bulge_d label=Band6_ALMA_bulge_d units=none description=Band6_ALMA_bulge_d group=Galaxy/Halo Properties
+fieldname=dust_Band6_ALMA_bulge_m label=Band6_ALMA_bulge_m units=none description=Band6_ALMA_bulge_m group=Galaxy/Halo Properties
+fieldname=dust_Band6_ALMA_bulge_t label=Band6_ALMA_bulge_t units=none description=Band6_ALMA_bulge_t group=Galaxy/Halo Properties
+fieldname=dust_Band6_ALMA_disk label=Band6_ALMA_disk units=none description=Band6_ALMA_disk group=Galaxy/Halo Properties
+fieldname=dust_Band6_ALMA_total label=Band6_ALMA_total units=none description=Band6_ALMA_total group=Galaxy/Halo Properties
+fieldname=dust_Band5_ALMA_bulge_d label=Band5_ALMA_bulge_d units=none description=Band5_ALMA_bulge_d group=Galaxy/Halo Properties
+fieldname=dust_Band5_ALMA_bulge_m label=Band5_ALMA_bulge_m units=none description=Band5_ALMA_bulge_m group=Galaxy/Halo Properties
+fieldname=dust_Band5_ALMA_bulge_t label=Band5_ALMA_bulge_t units=none description=Band5_ALMA_bulge_t group=Galaxy/Halo Properties
+fieldname=dust_Band5_ALMA_disk label=Band5_ALMA_disk units=none description=Band5_ALMA_disk group=Galaxy/Halo Properties
+fieldname=dust_Band5_ALMA_total label=Band5_ALMA_total units=none description=Band5_ALMA_total group=Galaxy/Halo Properties
+fieldname=dust_Band4_ALMA_bulge_d label=Band4_ALMA_bulge_d units=none description=Band4_ALMA_bulge_d group=Galaxy/Halo Properties
+fieldname=dust_Band4_ALMA_bulge_m label=Band4_ALMA_bulge_m units=none description=Band4_ALMA_bulge_m group=Galaxy/Halo Properties
+fieldname=dust_Band4_ALMA_bulge_t label=Band4_ALMA_bulge_t units=none description=Band4_ALMA_bulge_t group=Galaxy/Halo Properties
+fieldname=dust_Band4_ALMA_disk label=Band4_ALMA_disk units=none description=Band4_ALMA_disk group=Galaxy/Halo Properties
+fieldname=dust_Band4_ALMA_total label=Band4_ALMA_total units=none description=Band4_ALMA_total group=Galaxy/Halo Properties
+fieldname=nodust_FUV_GALEX_bulge_d label=FUV_GALEX_bulge_d (no dust) units=none description=FUV_GALEX_bulge_d (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_FUV_GALEX_bulge_m label=FUV_GALEX_bulge_m (no dust) units=none description=FUV_GALEX_bulge_m (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_FUV_GALEX_bulge_t label=FUV_GALEX_bulge_t (no dust) units=none description=FUV_GALEX_bulge_t (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_FUV_GALEX_disk label=FUV_GALEX_disk (no dust) units=none description=FUV_GALEX_disk (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_FUV_GALEX_total label=FUV_GALEX_total (no dust) units=none description=FUV_GALEX_total (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_NUV_GALEX_bulge_d label=NUV_GALEX_bulge_d (no dust) units=none description=NUV_GALEX_bulge_d (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_NUV_GALEX_bulge_m label=NUV_GALEX_bulge_m (no dust) units=none description=NUV_GALEX_bulge_m (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_NUV_GALEX_bulge_t label=NUV_GALEX_bulge_t (no dust) units=none description=NUV_GALEX_bulge_t (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_NUV_GALEX_disk label=NUV_GALEX_disk (no dust) units=none description=NUV_GALEX_disk (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_NUV_GALEX_total label=NUV_GALEX_total (no dust) units=none description=NUV_GALEX_total (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_u_SDSS_bulge_d label=u_SDSS_bulge_d (no dust) units=none description=u_SDSS_bulge_d (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_u_SDSS_bulge_m label=u_SDSS_bulge_m (no dust) units=none description=u_SDSS_bulge_m (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_u_SDSS_bulge_t label=u_SDSS_bulge_t (no dust) units=none description=u_SDSS_bulge_t (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_u_SDSS_disk label=u_SDSS_disk (no dust) units=none description=u_SDSS_disk (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_u_SDSS_total label=u_SDSS_total (no dust) units=none description=u_SDSS_total (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_g_SDSS_bulge_d label=g_SDSS_bulge_d (no dust) units=none description=g_SDSS_bulge_d (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_g_SDSS_bulge_m label=g_SDSS_bulge_m (no dust) units=none description=g_SDSS_bulge_m (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_g_SDSS_bulge_t label=g_SDSS_bulge_t (no dust) units=none description=g_SDSS_bulge_t (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_g_SDSS_disk label=g_SDSS_disk (no dust) units=none description=g_SDSS_disk (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_g_SDSS_total label=g_SDSS_total (no dust) units=none description=g_SDSS_total (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_r_SDSS_bulge_d label=r_SDSS_bulge_d (no dust) units=none description=r_SDSS_bulge_d (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_r_SDSS_bulge_m label=r_SDSS_bulge_m (no dust) units=none description=r_SDSS_bulge_m (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_r_SDSS_bulge_t label=r_SDSS_bulge_t (no dust) units=none description=r_SDSS_bulge_t (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_r_SDSS_disk label=r_SDSS_disk (no dust) units=none description=r_SDSS_disk (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_r_SDSS_total label=r_SDSS_total (no dust) units=none description=r_SDSS_total (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_i_SDSS_bulge_d label=i_SDSS_bulge_d (no dust) units=none description=i_SDSS_bulge_d (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_i_SDSS_bulge_m label=i_SDSS_bulge_m (no dust) units=none description=i_SDSS_bulge_m (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_i_SDSS_bulge_t label=i_SDSS_bulge_t (no dust) units=none description=i_SDSS_bulge_t (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_i_SDSS_disk label=i_SDSS_disk (no dust) units=none description=i_SDSS_disk (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_i_SDSS_total label=i_SDSS_total (no dust) units=none description=i_SDSS_total (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_z_SDSS_bulge_d label=z_SDSS_bulge_d (no dust) units=none description=z_SDSS_bulge_d (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_z_SDSS_bulge_m label=z_SDSS_bulge_m (no dust) units=none description=z_SDSS_bulge_m (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_z_SDSS_bulge_t label=z_SDSS_bulge_t (no dust) units=none description=z_SDSS_bulge_t (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_z_SDSS_disk label=z_SDSS_disk (no dust) units=none description=z_SDSS_disk (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_z_SDSS_total label=z_SDSS_total (no dust) units=none description=z_SDSS_total (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_Y_VISTA_bulge_d label=Y_VISTA_bulge_d (no dust) units=none description=Y_VISTA_bulge_d (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_Y_VISTA_bulge_m label=Y_VISTA_bulge_m (no dust) units=none description=Y_VISTA_bulge_m (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_Y_VISTA_bulge_t label=Y_VISTA_bulge_t (no dust) units=none description=Y_VISTA_bulge_t (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_Y_VISTA_disk label=Y_VISTA_disk (no dust) units=none description=Y_VISTA_disk (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_Y_VISTA_total label=Y_VISTA_total (no dust) units=none description=Y_VISTA_total (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_J_VISTA_bulge_d label=J_VISTA_bulge_d (no dust) units=none description=J_VISTA_bulge_d (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_J_VISTA_bulge_m label=J_VISTA_bulge_m (no dust) units=none description=J_VISTA_bulge_m (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_J_VISTA_bulge_t label=J_VISTA_bulge_t (no dust) units=none description=J_VISTA_bulge_t (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_J_VISTA_disk label=J_VISTA_disk (no dust) units=none description=J_VISTA_disk (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_J_VISTA_total label=J_VISTA_total (no dust) units=none description=J_VISTA_total (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_H_VISTA_bulge_d label=H_VISTA_bulge_d (no dust) units=none description=H_VISTA_bulge_d (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_H_VISTA_bulge_m label=H_VISTA_bulge_m (no dust) units=none description=H_VISTA_bulge_m (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_H_VISTA_bulge_t label=H_VISTA_bulge_t (no dust) units=none description=H_VISTA_bulge_t (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_H_VISTA_disk label=H_VISTA_disk (no dust) units=none description=H_VISTA_disk (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_H_VISTA_total label=H_VISTA_total (no dust) units=none description=H_VISTA_total (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_K_VISTA_bulge_d label=K_VISTA_bulge_d (no dust) units=none description=K_VISTA_bulge_d (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_K_VISTA_bulge_m label=K_VISTA_bulge_m (no dust) units=none description=K_VISTA_bulge_m (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_K_VISTA_bulge_t label=K_VISTA_bulge_t (no dust) units=none description=K_VISTA_bulge_t (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_K_VISTA_disk label=K_VISTA_disk (no dust) units=none description=K_VISTA_disk (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_K_VISTA_total label=K_VISTA_total (no dust) units=none description=K_VISTA_total (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_W1_WISE_bulge_d label=W1_WISE_bulge_d (no dust) units=none description=W1_WISE_bulge_d (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_W1_WISE_bulge_m label=W1_WISE_bulge_m (no dust) units=none description=W1_WISE_bulge_m (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_W1_WISE_bulge_t label=W1_WISE_bulge_t (no dust) units=none description=W1_WISE_bulge_t (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_W1_WISE_disk label=W1_WISE_disk (no dust) units=none description=W1_WISE_disk (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_W1_WISE_total label=W1_WISE_total (no dust) units=none description=W1_WISE_total (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_I1_Spitzer_bulge_d label=I1_Spitzer_bulge_d (no dust) units=none description=I1_Spitzer_bulge_d (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_I1_Spitzer_bulge_m label=I1_Spitzer_bulge_m (no dust) units=none description=I1_Spitzer_bulge_m (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_I1_Spitzer_bulge_t label=I1_Spitzer_bulge_t (no dust) units=none description=I1_Spitzer_bulge_t (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_I1_Spitzer_disk label=I1_Spitzer_disk (no dust) units=none description=I1_Spitzer_disk (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_I1_Spitzer_total label=I1_Spitzer_total (no dust) units=none description=I1_Spitzer_total (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_I2_Spitzer_bulge_d label=I2_Spitzer_bulge_d (no dust) units=none description=I2_Spitzer_bulge_d (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_I2_Spitzer_bulge_m label=I2_Spitzer_bulge_m (no dust) units=none description=I2_Spitzer_bulge_m (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_I2_Spitzer_bulge_t label=I2_Spitzer_bulge_t (no dust) units=none description=I2_Spitzer_bulge_t (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_I2_Spitzer_disk label=I2_Spitzer_disk (no dust) units=none description=I2_Spitzer_disk (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_I2_Spitzer_total label=I2_Spitzer_total (no dust) units=none description=I2_Spitzer_total (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_W2_WISE_bulge_d label=W2_WISE_bulge_d (no dust) units=none description=W2_WISE_bulge_d (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_W2_WISE_bulge_m label=W2_WISE_bulge_m (no dust) units=none description=W2_WISE_bulge_m (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_W2_WISE_bulge_t label=W2_WISE_bulge_t (no dust) units=none description=W2_WISE_bulge_t (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_W2_WISE_disk label=W2_WISE_disk (no dust) units=none description=W2_WISE_disk (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_W2_WISE_total label=W2_WISE_total (no dust) units=none description=W2_WISE_total (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_I3_Spitzer_bulge_d label=I3_Spitzer_bulge_d (no dust) units=none description=I3_Spitzer_bulge_d (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_I3_Spitzer_bulge_m label=I3_Spitzer_bulge_m (no dust) units=none description=I3_Spitzer_bulge_m (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_I3_Spitzer_bulge_t label=I3_Spitzer_bulge_t (no dust) units=none description=I3_Spitzer_bulge_t (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_I3_Spitzer_disk label=I3_Spitzer_disk (no dust) units=none description=I3_Spitzer_disk (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_I3_Spitzer_total label=I3_Spitzer_total (no dust) units=none description=I3_Spitzer_total (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_I4_Spitzer_bulge_d label=I4_Spitzer_bulge_d (no dust) units=none description=I4_Spitzer_bulge_d (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_I4_Spitzer_bulge_m label=I4_Spitzer_bulge_m (no dust) units=none description=I4_Spitzer_bulge_m (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_I4_Spitzer_bulge_t label=I4_Spitzer_bulge_t (no dust) units=none description=I4_Spitzer_bulge_t (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_I4_Spitzer_disk label=I4_Spitzer_disk (no dust) units=none description=I4_Spitzer_disk (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_I4_Spitzer_total label=I4_Spitzer_total (no dust) units=none description=I4_Spitzer_total (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_W3_WISE_bulge_d label=W3_WISE_bulge_d (no dust) units=none description=W3_WISE_bulge_d (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_W3_WISE_bulge_m label=W3_WISE_bulge_m (no dust) units=none description=W3_WISE_bulge_m (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_W3_WISE_bulge_t label=W3_WISE_bulge_t (no dust) units=none description=W3_WISE_bulge_t (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_W3_WISE_disk label=W3_WISE_disk (no dust) units=none description=W3_WISE_disk (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_W3_WISE_total label=W3_WISE_total (no dust) units=none description=W3_WISE_total (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_W4_WISE_bulge_d label=W4_WISE_bulge_d (no dust) units=none description=W4_WISE_bulge_d (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_W4_WISE_bulge_m label=W4_WISE_bulge_m (no dust) units=none description=W4_WISE_bulge_m (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_W4_WISE_bulge_t label=W4_WISE_bulge_t (no dust) units=none description=W4_WISE_bulge_t (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_W4_WISE_disk label=W4_WISE_disk (no dust) units=none description=W4_WISE_disk (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_W4_WISE_total label=W4_WISE_total (no dust) units=none description=W4_WISE_total (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_P70_Herschel_bulge_d label=P70_Herschel_bulge_d (no dust) units=none description=P70_Herschel_bulge_d (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_P70_Herschel_bulge_m label=P70_Herschel_bulge_m (no dust) units=none description=P70_Herschel_bulge_m (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_P70_Herschel_bulge_t label=P70_Herschel_bulge_t (no dust) units=none description=P70_Herschel_bulge_t (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_P70_Herschel_disk label=P70_Herschel_disk (no dust) units=none description=P70_Herschel_disk (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_P70_Herschel_total label=P70_Herschel_total (no dust) units=none description=P70_Herschel_total (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_P100_Herschel_bulge_d label=P100_Herschel_bulge_d (no dust) units=none description=P100_Herschel_bulge_d (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_P100_Herschel_bulge_m label=P100_Herschel_bulge_m (no dust) units=none description=P100_Herschel_bulge_m (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_P100_Herschel_bulge_t label=P100_Herschel_bulge_t (no dust) units=none description=P100_Herschel_bulge_t (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_P100_Herschel_disk label=P100_Herschel_disk (no dust) units=none description=P100_Herschel_disk (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_P100_Herschel_total label=P100_Herschel_total (no dust) units=none description=P100_Herschel_total (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_P160_Herschel_bulge_d label=P160_Herschel_bulge_d (no dust) units=none description=P160_Herschel_bulge_d (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_P160_Herschel_bulge_m label=P160_Herschel_bulge_m (no dust) units=none description=P160_Herschel_bulge_m (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_P160_Herschel_bulge_t label=P160_Herschel_bulge_t (no dust) units=none description=P160_Herschel_bulge_t (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_P160_Herschel_disk label=P160_Herschel_disk (no dust) units=none description=P160_Herschel_disk (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_P160_Herschel_total label=P160_Herschel_total (no dust) units=none description=P160_Herschel_total (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_S250_Herschel_bulge_d label=S250_Herschel_bulge_d (no dust) units=none description=S250_Herschel_bulge_d (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_S250_Herschel_bulge_m label=S250_Herschel_bulge_m (no dust) units=none description=S250_Herschel_bulge_m (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_S250_Herschel_bulge_t label=S250_Herschel_bulge_t (no dust) units=none description=S250_Herschel_bulge_t (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_S250_Herschel_disk label=S250_Herschel_disk (no dust) units=none description=S250_Herschel_disk (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_S250_Herschel_total label=S250_Herschel_total (no dust) units=none description=S250_Herschel_total (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_S350_Herschel_bulge_d label=S350_Herschel_bulge_d (no dust) units=none description=S350_Herschel_bulge_d (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_S350_Herschel_bulge_m label=S350_Herschel_bulge_m (no dust) units=none description=S350_Herschel_bulge_m (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_S350_Herschel_bulge_t label=S350_Herschel_bulge_t (no dust) units=none description=S350_Herschel_bulge_t (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_S350_Herschel_disk label=S350_Herschel_disk (no dust) units=none description=S350_Herschel_disk (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_S350_Herschel_total label=S350_Herschel_total (no dust) units=none description=S350_Herschel_total (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_S450_JCMT_bulge_d label=S450_JCMT_bulge_d (no dust) units=none description=S450_JCMT_bulge_d (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_S450_JCMT_bulge_m label=S450_JCMT_bulge_m (no dust) units=none description=S450_JCMT_bulge_m (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_S450_JCMT_bulge_t label=S450_JCMT_bulge_t (no dust) units=none description=S450_JCMT_bulge_t (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_S450_JCMT_disk label=S450_JCMT_disk (no dust) units=none description=S450_JCMT_disk (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_S450_JCMT_total label=S450_JCMT_total (no dust) units=none description=S450_JCMT_total (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_S500_Herschel_bulge_d label=S500_Herschel_bulge_d (no dust) units=none description=S500_Herschel_bulge_d (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_S500_Herschel_bulge_m label=S500_Herschel_bulge_m (no dust) units=none description=S500_Herschel_bulge_m (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_S500_Herschel_bulge_t label=S500_Herschel_bulge_t (no dust) units=none description=S500_Herschel_bulge_t (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_S500_Herschel_disk label=S500_Herschel_disk (no dust) units=none description=S500_Herschel_disk (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_S500_Herschel_total label=S500_Herschel_total (no dust) units=none description=S500_Herschel_total (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_S850_JCMT_bulge_d label=S850_JCMT_bulge_d (no dust) units=none description=S850_JCMT_bulge_d (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_S850_JCMT_bulge_m label=S850_JCMT_bulge_m (no dust) units=none description=S850_JCMT_bulge_m (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_S850_JCMT_bulge_t label=S850_JCMT_bulge_t (no dust) units=none description=S850_JCMT_bulge_t (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_S850_JCMT_disk label=S850_JCMT_disk (no dust) units=none description=S850_JCMT_disk (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_S850_JCMT_total label=S850_JCMT_total (no dust) units=none description=S850_JCMT_total (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_Band9_ALMA_bulge_d label=Band9_ALMA_bulge_d (no dust) units=none description=Band9_ALMA_bulge_d (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_Band9_ALMA_bulge_m label=Band9_ALMA_bulge_m (no dust) units=none description=Band9_ALMA_bulge_m (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_Band9_ALMA_bulge_t label=Band9_ALMA_bulge_t (no dust) units=none description=Band9_ALMA_bulge_t (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_Band9_ALMA_disk label=Band9_ALMA_disk (no dust) units=none description=Band9_ALMA_disk (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_Band9_ALMA_total label=Band9_ALMA_total (no dust) units=none description=Band9_ALMA_total (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_Band8_ALMA_bulge_d label=Band8_ALMA_bulge_d (no dust) units=none description=Band8_ALMA_bulge_d (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_Band8_ALMA_bulge_m label=Band8_ALMA_bulge_m (no dust) units=none description=Band8_ALMA_bulge_m (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_Band8_ALMA_bulge_t label=Band8_ALMA_bulge_t (no dust) units=none description=Band8_ALMA_bulge_t (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_Band8_ALMA_disk label=Band8_ALMA_disk (no dust) units=none description=Band8_ALMA_disk (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_Band8_ALMA_total label=Band8_ALMA_total (no dust) units=none description=Band8_ALMA_total (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_Band7_ALMA_bulge_d label=Band7_ALMA_bulge_d (no dust) units=none description=Band7_ALMA_bulge_d (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_Band7_ALMA_bulge_m label=Band7_ALMA_bulge_m (no dust) units=none description=Band7_ALMA_bulge_m (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_Band7_ALMA_bulge_t label=Band7_ALMA_bulge_t (no dust) units=none description=Band7_ALMA_bulge_t (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_Band7_ALMA_disk label=Band7_ALMA_disk (no dust) units=none description=Band7_ALMA_disk (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_Band7_ALMA_total label=Band7_ALMA_total (no dust) units=none description=Band7_ALMA_total (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_Band6_ALMA_bulge_d label=Band6_ALMA_bulge_d (no dust) units=none description=Band6_ALMA_bulge_d (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_Band6_ALMA_bulge_m label=Band6_ALMA_bulge_m (no dust) units=none description=Band6_ALMA_bulge_m (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_Band6_ALMA_bulge_t label=Band6_ALMA_bulge_t (no dust) units=none description=Band6_ALMA_bulge_t (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_Band6_ALMA_disk label=Band6_ALMA_disk (no dust) units=none description=Band6_ALMA_disk (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_Band6_ALMA_total label=Band6_ALMA_total (no dust) units=none description=Band6_ALMA_total (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_Band5_ALMA_bulge_d label=Band5_ALMA_bulge_d (no dust) units=none description=Band5_ALMA_bulge_d (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_Band5_ALMA_bulge_m label=Band5_ALMA_bulge_m (no dust) units=none description=Band5_ALMA_bulge_m (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_Band5_ALMA_bulge_t label=Band5_ALMA_bulge_t (no dust) units=none description=Band5_ALMA_bulge_t (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_Band5_ALMA_disk label=Band5_ALMA_disk (no dust) units=none description=Band5_ALMA_disk (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_Band5_ALMA_total label=Band5_ALMA_total (no dust) units=none description=Band5_ALMA_total (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_Band4_ALMA_bulge_d label=Band4_ALMA_bulge_d (no dust) units=none description=Band4_ALMA_bulge_d (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_Band4_ALMA_bulge_m label=Band4_ALMA_bulge_m (no dust) units=none description=Band4_ALMA_bulge_m (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_Band4_ALMA_bulge_t label=Band4_ALMA_bulge_t (no dust) units=none description=Band4_ALMA_bulge_t (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_Band4_ALMA_disk label=Band4_ALMA_disk (no dust) units=none description=Band4_ALMA_disk (no dust) group=Galaxy/Halo Properties
+fieldname=nodust_Band4_ALMA_total label=Band4_ALMA_total (no dust) units=none description=Band4_ALMA_total (no dust) group=Galaxy/Halo Properties

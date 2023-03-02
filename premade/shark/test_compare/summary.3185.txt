@@ -1,0 +1,160 @@
+Summary
+=======
+Catalogue Geometry:  Premade
+Premade Catalogue:   Shark Light-Cone
+Premade Dataset:     Apparent Magnitudes
+
+Shark Light-Cone
+Area: 107.89 sq. deg Sky geometry: 211.5 <= Right Ascension <= 223.500 -4.5 <= Declination <= +4.5 Sources within a co-
+moving distance of 8943.21 Mpc/h (similar to z<6) Stingray selection:  
+  
+1\. r-band magnitude < 32  
+2\. stellar masses >= 10^8 Msun  
+  
+[Lagos et al. 2018, MNRAS, 481, 3573](https://ui.adsabs.harvard.edu/abs/2018MNRAS.481.3573L/abstract) [Robotham et al.
+2020, MNRAS, 495, 905](https://ui.adsabs.harvard.edu/abs/2020MNRAS.495..905R/abstract)
+
+
+
+Acknowledgements
+================
+Theoretical Astrophysical Observatory (TAO):
+Data used in this work was generated using Swinburne University's Theoretical Astrophysical Observatory (TAO). TAO is
+part of the Australian All-Sky Virtual Observatory (ASVO) and is freely accessible at {{ siteurl }}.
+Shark Light-Cone:  
+This work has received funding from the ARC Centre of Excellence for All Sky Astrophysics in 3 Dimensions (ASTRO 3D),
+through project number CE170100013. This work was supported by resources provided by The Pawsey Supercomputing Centre
+with funding from the Australian Government and the Government of Western Australia.
+
+
+Details
+========
+Output Properties: 115 properties selected
+
+* ALMA Band4 (With dust) in Apparent Magnitudes 
+* ALMA Band4 in Apparent Magnitudes 
+* ALMA Band5 (With dust) in Apparent Magnitudes 
+* ALMA Band5 in Apparent Magnitudes 
+* ALMA Band6 (With dust) in Apparent Magnitudes 
+* ALMA Band6 in Apparent Magnitudes 
+* ALMA Band7 (With dust) in Apparent Magnitudes 
+* ALMA Band7 in Apparent Magnitudes 
+* ALMA Band8 (With dust) in Apparent Magnitudes 
+* ALMA Band8 in Apparent Magnitudes 
+* ALMA Band9 (With dust) in Apparent Magnitudes 
+* ALMA Band9 in Apparent Magnitudes 
+* JCMT S450 (With dust) in Apparent Magnitudes 
+* JCMT S450 in Apparent Magnitudes 
+* JCMT S850 (With dust) in Apparent Magnitudes 
+* JCMT S850 in Apparent Magnitudes 
+* Herschel/SPIRE 250 (With dust) in Apparent Magnitudes 
+* Herschel/SPIRE 250 in Apparent Magnitudes 
+* Herschel/SPIRE 350 (With dust) in Apparent Magnitudes 
+* Herschel/SPIRE 350 in Apparent Magnitudes 
+* Herschel/SPIRE 500 (With dust) in Apparent Magnitudes 
+* Herschel/SPIRE 500 in Apparent Magnitudes 
+* GALEX FUV (With dust) in Apparent Magnitudes 
+* GALEX FUV in Apparent Magnitudes 
+* GALEX NUV (With dust) in Apparent Magnitudes 
+* GALEX NUV in Apparent Magnitudes 
+* SDSS u (With dust) in Apparent Magnitudes 
+* SDSS u in Apparent Magnitudes 
+* SDSS g (With dust) in Apparent Magnitudes 
+* SDSS g in Apparent Magnitudes 
+* SDSS r (With dust) in Apparent Magnitudes 
+* SDSS r in Apparent Magnitudes 
+* SDSS i (With dust) in Apparent Magnitudes 
+* SDSS i in Apparent Magnitudes 
+* SDSS z (With dust) in Apparent Magnitudes 
+* SDSS z in Apparent Magnitudes 
+* VISTA Y (With dust) in Apparent Magnitudes 
+* VISTA Y in Apparent Magnitudes 
+* VISTA J (With dust) in Apparent Magnitudes 
+* VISTA J in Apparent Magnitudes 
+* VISTA H (With dust) in Apparent Magnitudes 
+* VISTA H in Apparent Magnitudes 
+* VISTA K (With dust) in Apparent Magnitudes 
+* VISTA K in Apparent Magnitudes 
+* WISE1 (With dust) in Apparent Magnitudes 
+* WISE1 in Apparent Magnitudes 
+* WISE2 (With dust) in Apparent Magnitudes 
+* WISE2 in Apparent Magnitudes 
+* WISE3 (With dust) in Apparent Magnitudes 
+* WISE3 in Apparent Magnitudes 
+* WISE4 (With dust) in Apparent Magnitudes 
+* WISE4 in Apparent Magnitudes 
+* Spitzer IRAC1 (With dust) in Apparent Magnitudes 
+* Spitzer IRAC1 in Apparent Magnitudes 
+* Spitzer IRAC2 (With dust) in Apparent Magnitudes 
+* Spitzer IRAC2 in Apparent Magnitudes 
+* Spitzer IRAC3 (With dust) in Apparent Magnitudes 
+* Spitzer IRAC3 in Apparent Magnitudes 
+* Spitzer IRAC4 (With dust) in Apparent Magnitudes 
+* Spitzer IRAC4 in Apparent Magnitudes 
+* Herschel/PACS 70 (With dust) in Apparent Magnitudes 
+* Herschel/PACS 70 in Apparent Magnitudes 
+* Herschel/PACS 100 (With dust) in Apparent Magnitudes 
+* Herschel/PACS 100 in Apparent Magnitudes 
+* Herschel/PACS 160 (With dust) in Apparent Magnitudes 
+* Herschel/PACS 160 in Apparent Magnitudes 
+* Subhalo concentration in Apparent Magnitudes (dimensionless)
+* id_galaxy_sky in Apparent Magnitudes 
+* id_group_sky in Apparent Magnitudes 
+* inclination in Apparent Magnitudes (rad)
+* Bulge specific angular momentum in Apparent Magnitudes (cMpc/h km/s)
+* Disk specific angular momentum in Apparent Magnitudes (cMpc/h km/s)
+* L (X) in Apparent Magnitudes (Msun pMpc km/s)
+* L (Y) in Apparent Magnitudes (Msun pMpc km/s)
+* L (Z) in Apparent Magnitudes (Msun pMpc km/s)
+* Bulge atomic gas mass in Apparent Magnitudes (Msun/h)
+* Disk atomic gas mass in Apparent Magnitudes (Msun/h)
+* Black hole mass in Apparent Magnitudes (Msun/h)
+* BH accretion rate (Hot Halo) in Apparent Magnitudes (Msun/h/Gyr)
+* BH accretion rate (Starburst) in Apparent Magnitudes (Msun/h/Gyr)
+* Bulge gas mass in Apparent Magnitudes (MSun/h)
+* Disk gas mass in Apparent Magnitudes (Msun/h)
+* Bulge molecular gas mass in Apparent Magnitudes (Msun/h)
+* Disk molecular gas mass in Apparent Magnitudes (Msun/h)
+* Bulge stellar mass in Apparent Magnitudes (Msun/h)
+* Disk stellar mass in Apparent Magnitudes (Msun/h)
+* Host halo Mvir in Apparent Magnitudes (Msun/h)
+* Subhalo Mvir in Apparent Magnitudes (Msun/h)
+* Intrinsic half-mass radius of bulge gas in Apparent Magnitudes (cMpc/h)
+* Apparent half-mass radius of bulge gas in Apparent Magnitudes (arcsec)
+* Intrinsic half-mass radius of disk gas in Apparent Magnitudes (cMpc/h)
+* Apparent half-mass radius of disk gas in Apparent Magnitudes (arcsec)
+* Intrinsic half-mass radius of bulge stars in Apparent Magnitudes (cMpc/h)
+* Apparent half-mass radius of bulge stars in Apparent Magnitudes (arcsec)
+* Intrinsic half-mass radius of disk stars in Apparent Magnitudes (cMpc/h)
+* Apparent half-mass radius of disk stars in Apparent Magnitudes (arcsec)
+* HI flux (21 cm) in Apparent Magnitudes 
+* Bulge SFR in Apparent Magnitudes (Msun/Gyr/h)
+* Disk SFR in Apparent Magnitudes (Msun/Gyr/h)
+* Galaxy type in Apparent Magnitudes 
+* Host halo Vvir in Apparent Magnitudes (km/s)
+* Subhalo Vvir in Apparent Magnitudes (km/s)
+* Bulge gas metallicity in Apparent Magnitudes 
+* Disk gas metallicity in Apparent Magnitudes 
+* Co-moving distance in Apparent Magnitudes (simulation units)
+* Declination in Apparent Magnitudes (rad)
+* Position Angle in Apparent Magnitudes (rad)
+* Right ascension in Apparent Magnitudes (rad)
+* Peculiar velocity (LOS) in Apparent Magnitudes (proper km/s)
+* Peculiar velocity (X) in Apparent Magnitudes (proper km/s)
+* Peculiar velocity (Y) in Apparent Magnitudes (proper km/s)
+* Peculiar velocity (Z) in Apparent Magnitudes (proper km/s)
+* Redshift (Observed) in Apparent Magnitudes 
+* Redshift (CMB) in Apparent Magnitudes 
+* Redshift (Cosmological) in Apparent Magnitudes 
+
+
+Selection
+=========
+-1.0 ≤ Redshift (Cosmological)
+
+
+Output
+======
+HDF5
+
+
