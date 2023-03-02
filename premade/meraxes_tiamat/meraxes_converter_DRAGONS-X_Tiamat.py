@@ -47,7 +47,6 @@ def save_snapshot_to_h5(galaxies, units, fields, ofilename):
 def write_sidecar_xml(galaxies, units, fields, ofilename):
     outfile = open(ofilename+'.xml', 'w')
     outfile_ui = open(ofilename+'.ui.xml', 'w')
-    outfile.write('<settings>\n')
     outfile_ui.write('<settings>\n')
     outfile.write('  <sageinput>\n')
     outfile_ui.write('  <sageinput>\n')
@@ -85,8 +84,12 @@ def write_sidecar_xml(galaxies, units, fields, ofilename):
                 my_order = str(oi+1)
                 if field.getUnits():
                     my_units = field.getUnits()
+                else:
+                    print("new field["+oname+"]")
                 if field.getGroup():
                     my_group = field.getGroup()
+            else:
+                print("new field["+oname+"]")
 
             outfile.write('    <Field Type="'+my_type+'"\n')
             outfile.write('           label="'+my_label+'"\n')
@@ -105,7 +108,6 @@ def write_sidecar_xml(galaxies, units, fields, ofilename):
 
     outfile.write('  </sageinput>\n')
     outfile_ui.write('  </sageinput>\n')
-    outfile.write('</settings>\n')
     outfile_ui.write('</settings>\n')
 
     return mydtype
